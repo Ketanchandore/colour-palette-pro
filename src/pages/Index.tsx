@@ -4,7 +4,6 @@ import { Palette, TrendingUp, Users, ArrowRight } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { HeroSection } from "@/components/dashboard/HeroSection";
 import { StatsCard } from "@/components/dashboard/StatsCard";
-import { ColorOfTheDay } from "@/components/dashboard/ColorOfTheDay";
 import { PaletteCard } from "@/components/palette/PaletteCard";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
@@ -74,9 +73,6 @@ export default function Index() {
             delay={200}
           />
         </div>
-
-        {/* Color of the Day */}
-        <ColorOfTheDay />
 
         {/* Featured Palettes */}
         <div>
