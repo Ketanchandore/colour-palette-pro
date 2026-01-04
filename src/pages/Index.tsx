@@ -4,6 +4,7 @@ import { Palette, TrendingUp, Users, ArrowRight } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { HeroSection } from "@/components/dashboard/HeroSection";
 import { StatsCard } from "@/components/dashboard/StatsCard";
+import { ColorOfTheDay } from "@/components/dashboard/ColorOfTheDay";
 import { PaletteCard } from "@/components/palette/PaletteCard";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
@@ -49,29 +50,37 @@ export default function Index() {
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <StatsCard
-            title="Total Palettes"
-            value="12,847"
-            icon={<Palette className="w-6 h-6" />}
-            gradient="purple"
-            delay={0}
-          />
-          <StatsCard
-            title="Generated Today"
-            value="1,234"
-            icon={<TrendingUp className="w-6 h-6" />}
-            gradient="teal"
-            delay={100}
-          />
-          <StatsCard
-            title="Active Users"
-            value="5,678"
-            icon={<Users className="w-6 h-6" />}
-            gradient="coral"
-            delay={200}
-          />
+        {/* Color of the Day + Stats Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Color of the Day - Takes 1 column on large screens */}
+          <div className="lg:col-span-1">
+            <ColorOfTheDay />
+          </div>
+          
+          {/* Stats Cards - Takes 2 columns on large screens */}
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <StatsCard
+              title="Total Palettes"
+              value="12,847"
+              icon={<Palette className="w-6 h-6" />}
+              gradient="purple"
+              delay={0}
+            />
+            <StatsCard
+              title="Generated Today"
+              value="1,234"
+              icon={<TrendingUp className="w-6 h-6" />}
+              gradient="teal"
+              delay={100}
+            />
+            <StatsCard
+              title="Active Users"
+              value="5,678"
+              icon={<Users className="w-6 h-6" />}
+              gradient="coral"
+              delay={200}
+            />
+          </div>
         </div>
 
         {/* Featured Palettes */}

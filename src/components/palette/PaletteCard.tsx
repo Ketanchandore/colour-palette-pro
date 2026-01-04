@@ -1,8 +1,9 @@
-import { Heart, Copy, Check } from "lucide-react";
 import { useState, CSSProperties } from "react";
-import { cn } from "@/lib/utils";
+import { Copy, Check, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
+import { SocialShareButtons } from "./SocialShareButtons";
 
 interface PaletteCardProps {
   id: string;
@@ -78,7 +79,7 @@ export function PaletteCard({
       <div className="p-4">
         <div className="flex items-center justify-between">
           <h3 className="font-medium text-foreground truncate pr-2">{name}</h3>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Button
               variant="ghost"
               size="sm"
@@ -87,6 +88,7 @@ export function PaletteCard({
             >
               <Copy className="w-4 h-4" />
             </Button>
+            <SocialShareButtons paletteName={name} colors={colors} paletteId={id} />
             {onFavoriteToggle && (
               <Button
                 variant="ghost"
