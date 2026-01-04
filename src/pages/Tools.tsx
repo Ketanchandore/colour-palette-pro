@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Wrench, Pipette, Contrast, Palette, ArrowRightLeft, Layers } from "lucide-react";
+import { Wrench, Pipette, Contrast, Palette, ArrowRightLeft, Layers, ImageIcon } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,8 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { PaletteFromImage } from "@/components/tools/PaletteFromImage";
 
-type ActiveTool = "picker" | "contrast" | "gradient" | "converter" | "shades";
+type ActiveTool = "picker" | "contrast" | "gradient" | "converter" | "shades" | "image";
 
 function hexToRgb(hex: string): { r: number; g: number; b: number } {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -109,6 +110,7 @@ const tools = [
   { id: "gradient", name: "Gradient Generator", icon: Palette },
   { id: "converter", name: "Color Converter", icon: ArrowRightLeft },
   { id: "shades", name: "Shade Generator", icon: Layers },
+  { id: "image", name: "Palette from Image", icon: ImageIcon },
 ];
 
 export default function Tools() {
@@ -437,6 +439,16 @@ export default function Tools() {
                   ))}
                 </div>
               </div>
+            </div>
+          )}
+
+          {activeTool === "image" && (
+            <div className="space-y-6">
+              <h2 className="text-xl font-display font-bold">Palette from Image</h2>
+              <p className="text-muted-foreground">
+                Upload an image to automatically extract its dominant colors
+              </p>
+              <PaletteFromImage />
             </div>
           )}
         </div>
