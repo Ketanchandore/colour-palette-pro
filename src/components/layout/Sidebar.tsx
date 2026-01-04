@@ -9,9 +9,7 @@ import {
   User,
   LogOut,
   LogIn,
-  Sparkles,
-  Menu,
-  X
+  Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
@@ -30,55 +28,26 @@ const userItems = [
   { icon: User, label: "Profile", path: "/profile" },
 ];
 
-interface SidebarProps {
-  isOpen: boolean;
-  onToggle: () => void;
-}
-
-export function Sidebar({ isOpen, onToggle }: SidebarProps) {
+export function Sidebar() {
   const location = useLocation();
   const { user, signOut } = useAuth();
 
   return (
-    <>
-      {/* Mobile Overlay */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden" 
-          onClick={onToggle}
-        />
-      )}
-      
-      <aside className={cn(
-        "fixed left-0 top-0 z-50 h-screen w-64 bg-sidebar border-r border-sidebar-border transition-transform duration-300 ease-in-out",
-        "lg:translate-x-0",
-        isOpen ? "translate-x-0" : "-translate-x-full"
-      )}>
+    <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-sidebar border-r border-sidebar-border">
       <div className="flex h-full flex-col">
-        {/* Logo with Close Button */}
-        <div className="flex items-center justify-between px-6 py-6">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center shadow-glow-sm">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-            </div>
-            <div>
-              <h1 className="text-xl font-display font-bold text-sidebar-foreground">
-                Colour Pine
-              </h1>
-              <p className="text-xs text-muted-foreground">Design with Colors</p>
+        {/* Logo */}
+        <div className="flex items-center gap-3 px-6 py-6">
+          <div className="relative">
+            <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center shadow-glow-sm">
+              <Sparkles className="w-5 h-5 text-white" />
             </div>
           </div>
-          {/* Close button - only visible on mobile */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
-            onClick={onToggle}
-          >
-            <X className="w-5 h-5" />
-          </Button>
+          <div>
+            <h1 className="text-xl font-display font-bold text-sidebar-foreground">
+              Colour Pine
+            </h1>
+            <p className="text-xs text-muted-foreground">Design with Colors</p>
+          </div>
         </div>
 
         {/* Main Navigation */}
@@ -87,10 +56,9 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
-                  <Link
+                <Link
                   key={item.path}
                   to={item.path}
-                  onClick={onToggle}
                   className={cn(
                     "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200",
                     isActive
@@ -118,7 +86,6 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
                     <Link
                       key={item.path}
                       to={item.path}
-                      onClick={onToggle}
                       className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200",
                         isActive
@@ -176,20 +143,5 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
         </div>
       </div>
     </aside>
-    </>
-  );
-}
-
-// Mobile Menu Button Component
-export function MobileMenuButton({ onClick }: { onClick: () => void }) {
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      className="fixed top-4 left-4 z-30 lg:hidden w-12 h-12 rounded-xl gradient-primary text-white shadow-glow-sm hover:opacity-90"
-      onClick={onClick}
-    >
-      <Menu className="w-6 h-6" />
-    </Button>
   );
 }
