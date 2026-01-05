@@ -12,6 +12,10 @@ import Collections from "./pages/Collections";
 import Tools from "./pages/Tools";
 import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile";
+import ImageColorExtractor from "./pages/ImageColorExtractor";
+import AIColorSuggestions from "./pages/AIColorSuggestions";
+import BrandColors from "./pages/BrandColors";
+import ColorBlindnessSimulator from "./pages/ColorBlindnessSimulator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +36,10 @@ const App = () => (
             <Route path="/tools" element={<Tools />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/image-extractor" element={<ImageColorExtractor />} />
+            <Route path="/ai-suggestions" element={<AIColorSuggestions />} />
+            <Route path="/brand-colors" element={<BrandColors />} />
+            <Route path="/blindness-simulator" element={<ColorBlindnessSimulator />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -9,7 +9,11 @@ import {
   User,
   LogOut,
   LogIn,
-  Sparkles
+  Sparkles,
+  ImageIcon,
+  Wand2,
+  Building2,
+  Eye
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
@@ -21,6 +25,10 @@ const navItems = [
   { icon: TrendingUp, label: "Trending", path: "/trending" },
   { icon: FolderOpen, label: "Collections", path: "/collections" },
   { icon: Wrench, label: "Color Tools", path: "/tools" },
+  { icon: ImageIcon, label: "Image Extractor", path: "/image-extractor" },
+  { icon: Wand2, label: "AI Suggestions", path: "/ai-suggestions" },
+  { icon: Building2, label: "Brand Colors", path: "/brand-colors" },
+  { icon: Eye, label: "Blindness Simulator", path: "/blindness-simulator" },
 ];
 
 const userItems = [
