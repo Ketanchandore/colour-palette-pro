@@ -58,8 +58,8 @@ export function Sidebar() {
           </div>
         </div>
 
-        {/* Main Navigation */}
-        <nav className="flex-1 px-4 py-4">
+        {/* Main Navigation - Scrollable */}
+        <nav className="flex-1 px-4 py-4 overflow-y-auto">
           <div className="space-y-1">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
