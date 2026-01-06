@@ -16,6 +16,13 @@ import ImageColorExtractor from "./pages/ImageColorExtractor";
 import AIColorSuggestions from "./pages/AIColorSuggestions";
 import BrandColors from "./pages/BrandColors";
 import ColorBlindnessSimulator from "./pages/ColorBlindnessSimulator";
+import UISimulator from "./pages/UISimulator";
+import URLBrandExtractor from "./pages/URLBrandExtractor";
+import AccessibilityDashboard from "./pages/AccessibilityDashboard";
+import CodeExport from "./pages/CodeExport";
+import MoodAISearch from "./pages/MoodAISearch";
+import BrandArchitect from "./pages/BrandArchitect";
+import SocialMediaKit from "./pages/SocialMediaKit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +47,13 @@ const App = () => (
             <Route path="/ai-suggestions" element={<AIColorSuggestions />} />
             <Route path="/brand-colors" element={<BrandColors />} />
             <Route path="/blindness-simulator" element={<ColorBlindnessSimulator />} />
+            <Route path="/ui-simulator" element={<UISimulator />} />
+            <Route path="/url-extractor" element={<URLBrandExtractor />} />
+            <Route path="/accessibility" element={<AccessibilityDashboard />} />
+            <Route path="/code-export" element={<CodeExport />} />
+            <Route path="/mood-search" element={<MoodAISearch />} />
+            <Route path="/brand-architect" element={<BrandArchitect />} />
+            <Route path="/social-kit" element={<SocialMediaKit />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
