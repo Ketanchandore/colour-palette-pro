@@ -23,6 +23,10 @@ import CodeExport from "./pages/CodeExport";
 import MoodAISearch from "./pages/MoodAISearch";
 import BrandArchitect from "./pages/BrandArchitect";
 import SocialMediaKit from "./pages/SocialMediaKit";
+import AIConstraintGenerator from "./pages/AIConstraintGenerator";
+import DataVizStudio from "./pages/DataVizStudio";
+import ProjectWorkspace from "./pages/ProjectWorkspace";
+import ColorSpaceConverter from "./pages/ColorSpaceConverter";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -54,6 +58,10 @@ const App = () => (
             <Route path="/mood-search" element={<MoodAISearch />} />
             <Route path="/brand-architect" element={<BrandArchitect />} />
             <Route path="/social-kit" element={<SocialMediaKit />} />
+            <Route path="/ai-constraint-generator" element={<AIConstraintGenerator />} />
+            <Route path="/data-viz-studio" element={<DataVizStudio />} />
+            <Route path="/project-workspace" element={<ProjectWorkspace />} />
+            <Route path="/color-space-converter" element={<ColorSpaceConverter />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
