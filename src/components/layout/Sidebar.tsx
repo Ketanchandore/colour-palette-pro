@@ -13,7 +13,11 @@ import {
   ImageIcon,
   Wand2,
   Building2,
-  Eye
+  Eye,
+  BarChart3,
+  FolderKanban,
+  RefreshCw,
+  Sliders
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
@@ -39,6 +43,10 @@ const advancedTools = [
   { icon: Wand2, label: "Mood AI Search", path: "/mood-search" },
   { icon: Palette, label: "Brand Architect", path: "/brand-architect" },
   { icon: ImageIcon, label: "Social Media Kit", path: "/social-kit" },
+  { icon: Sliders, label: "AI Constraint Gen", path: "/ai-constraint-generator" },
+  { icon: BarChart3, label: "Data Viz Studio", path: "/data-viz-studio" },
+  { icon: FolderKanban, label: "Project Workspace", path: "/project-workspace" },
+  { icon: RefreshCw, label: "Color Space Converter", path: "/color-space-converter" },
 ];
 
 const userItems = [
