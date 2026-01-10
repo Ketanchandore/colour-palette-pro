@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
+import { SubscriptionProvider } from "@/hooks/useSubscription";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Generator from "./pages/Generator";
@@ -27,6 +28,7 @@ import AIConstraintGenerator from "./pages/AIConstraintGenerator";
 import DataVizStudio from "./pages/DataVizStudio";
 import ProjectWorkspace from "./pages/ProjectWorkspace";
 import ColorSpaceConverter from "./pages/ColorSpaceConverter";
+import Subscription from "./pages/Subscription";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,38 +36,41 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/generator" element={<Generator />} />
-            <Route path="/trending" element={<Trending />} />
-            <Route path="/collections" element={<Collections />} />
-            <Route path="/tools" element={<Tools />} />
-            <Route path="/favorites" element={<Favorites />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/image-extractor" element={<ImageColorExtractor />} />
-            <Route path="/ai-suggestions" element={<AIColorSuggestions />} />
-            <Route path="/brand-colors" element={<BrandColors />} />
-            <Route path="/blindness-simulator" element={<ColorBlindnessSimulator />} />
-            <Route path="/ui-simulator" element={<UISimulator />} />
-            <Route path="/url-extractor" element={<URLBrandExtractor />} />
-            <Route path="/accessibility" element={<AccessibilityDashboard />} />
-            <Route path="/code-export" element={<CodeExport />} />
-            <Route path="/mood-search" element={<MoodAISearch />} />
-            <Route path="/brand-architect" element={<BrandArchitect />} />
-            <Route path="/social-kit" element={<SocialMediaKit />} />
-            <Route path="/ai-constraint-generator" element={<AIConstraintGenerator />} />
-            <Route path="/data-viz-studio" element={<DataVizStudio />} />
-            <Route path="/project-workspace" element={<ProjectWorkspace />} />
-            <Route path="/color-space-converter" element={<ColorSpaceConverter />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+      <SubscriptionProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/generator" element={<Generator />} />
+              <Route path="/trending" element={<Trending />} />
+              <Route path="/collections" element={<Collections />} />
+              <Route path="/tools" element={<Tools />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/subscription" element={<Subscription />} />
+              <Route path="/image-extractor" element={<ImageColorExtractor />} />
+              <Route path="/ai-suggestions" element={<AIColorSuggestions />} />
+              <Route path="/brand-colors" element={<BrandColors />} />
+              <Route path="/blindness-simulator" element={<ColorBlindnessSimulator />} />
+              <Route path="/ui-simulator" element={<UISimulator />} />
+              <Route path="/url-extractor" element={<URLBrandExtractor />} />
+              <Route path="/accessibility" element={<AccessibilityDashboard />} />
+              <Route path="/code-export" element={<CodeExport />} />
+              <Route path="/mood-search" element={<MoodAISearch />} />
+              <Route path="/brand-architect" element={<BrandArchitect />} />
+              <Route path="/social-kit" element={<SocialMediaKit />} />
+              <Route path="/ai-constraint-generator" element={<AIConstraintGenerator />} />
+              <Route path="/data-viz-studio" element={<DataVizStudio />} />
+              <Route path="/project-workspace" element={<ProjectWorkspace />} />
+              <Route path="/color-space-converter" element={<ColorSpaceConverter />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </SubscriptionProvider>
     </AuthProvider>
   </QueryClientProvider>
 );
