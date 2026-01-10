@@ -119,6 +119,75 @@ export type Database = {
         }
         Relationships: []
       }
+      subscriptions: {
+        Row: {
+          created_at: string
+          duration: Database["public"]["Enums"]["subscription_duration"]
+          expires_at: string
+          id: string
+          is_active: boolean
+          razorpay_payment_id: string | null
+          razorpay_subscription_id: string | null
+          starts_at: string
+          tier: Database["public"]["Enums"]["subscription_tier"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          duration?: Database["public"]["Enums"]["subscription_duration"]
+          expires_at: string
+          id?: string
+          is_active?: boolean
+          razorpay_payment_id?: string | null
+          razorpay_subscription_id?: string | null
+          starts_at?: string
+          tier?: Database["public"]["Enums"]["subscription_tier"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          duration?: Database["public"]["Enums"]["subscription_duration"]
+          expires_at?: string
+          id?: string
+          is_active?: boolean
+          razorpay_payment_id?: string | null
+          razorpay_subscription_id?: string | null
+          starts_at?: string
+          tier?: Database["public"]["Enums"]["subscription_tier"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      usage_tracking: {
+        Row: {
+          created_at: string
+          id: string
+          month_year: string
+          tool_usage_count: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          month_year: string
+          tool_usage_count?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          month_year?: string
+          tool_usage_count?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_collections: {
         Row: {
           created_at: string
@@ -183,7 +252,8 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      subscription_duration: "monthly" | "quarterly" | "biannual" | "annual"
+      subscription_tier: "free" | "silver" | "gold" | "diamond"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -310,6 +380,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      subscription_duration: ["monthly", "quarterly", "biannual", "annual"],
+      subscription_tier: ["free", "silver", "gold", "diamond"],
+    },
   },
 } as const

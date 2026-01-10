@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { User, Mail, Calendar, Palette, Heart, Settings, Shield, Bell, Sparkles, TrendingUp, Eye, Edit3, Camera, Award, Zap, Check, X, Crown } from "lucide-react";
+import { User, Mail, Calendar, Palette, Heart, Settings, Shield, Bell, Sparkles, TrendingUp, Eye, Edit3, Camera, Award, Zap, Check, X, Crown, Star, Gem } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
+import { useSubscription, SUBSCRIPTION_CONFIG } from "@/hooks/useSubscription";
 import { toast } from "sonner";
 
 interface ProfileData {
@@ -61,6 +62,7 @@ const premiumThemes = [
 
 export default function Profile() {
   const { user, loading: authLoading, signOut } = useAuth();
+  const { tier, level, isSubscribed } = useSubscription();
   const navigate = useNavigate();
   const [profile, setProfile] = useState<ProfileData | null>(null);
   const [stats, setStats] = useState<Stats>({ palettesCreated: 0, favorites: 0 });
@@ -363,10 +365,16 @@ export default function Profile() {
                   <h2 className="text-2xl font-display font-bold text-foreground">
                     {profile?.username || user?.email?.split("@")[0]}
                   </h2>
-                  <span className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-semibold rounded-full flex items-center gap-1">
-                    <Sparkles className="w-3 h-3" />
-                    Pro User
-                  </span>
+                  {isSubscribed && (
+                    <span className={`px-2 py-0.5 text-xs font-semibold rounded-full flex items-center gap-1 ${
+                      tier === 'diamond' ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white' :
+                      tier === 'gold' ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-white' :
+                      'bg-gradient-to-r from-slate-400 to-gray-500 text-white'
+                    }`}>
+                      {tier === 'diamond' ? <Gem className="w-3 h-3" /> : tier === 'gold' ? <Crown className="w-3 h-3" /> : <Star className="w-3 h-3" />}
+                      {tier.charAt(0).toUpperCase() + tier.slice(1)} User
+                    </span>
+                  )}
                 </div>
                 <p className="text-muted-foreground">{user?.email}</p>
                 <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1">
@@ -487,7 +495,7 @@ export default function Profile() {
               </div>
               <Sparkles className="w-4 h-4 text-teal-500" />
             </div>
-            <p className="text-3xl font-bold text-foreground">Level 3</p>
+            <p className="text-3xl font-bold text-foreground">Level {level}</p>
             <p className="text-sm text-muted-foreground">Creator Rank</p>
           </div>
         </div>

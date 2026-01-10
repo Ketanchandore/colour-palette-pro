@@ -269,6 +269,87 @@
     }
   }
 
+  /* Silver Theme Animations */
+  @keyframes silver-shimmer {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+
+  @keyframes silver-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(148, 163, 184, 0.3), 0 0 40px rgba(148, 163, 184, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(148, 163, 184, 0.5), 0 0 60px rgba(148, 163, 184, 0.2);
+    }
+  }
+
+  /* Gold Theme Animations */
+  @keyframes gold-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(251, 191, 36, 0.4), 0 0 40px rgba(251, 191, 36, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 35px rgba(251, 191, 36, 0.6), 0 0 70px rgba(251, 191, 36, 0.3);
+    }
+  }
+
+  @keyframes gold-shine {
+    0% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(45deg);
+    }
+  }
+
+  /* Diamond Theme Animations */
+  @keyframes diamond-sparkle {
+    0%, 100% {
+      filter: brightness(1) saturate(1);
+    }
+    25% {
+      filter: brightness(1.2) saturate(1.1);
+    }
+    50% {
+      filter: brightness(1.3) saturate(1.2);
+    }
+    75% {
+      filter: brightness(1.1) saturate(1.1);
+    }
+  }
+
+  @keyframes diamond-rainbow {
+    0% {
+      filter: hue-rotate(0deg) brightness(1.1);
+    }
+    50% {
+      filter: hue-rotate(30deg) brightness(1.2);
+    }
+    100% {
+      filter: hue-rotate(0deg) brightness(1.1);
+    }
+  }
+
+  @keyframes diamond-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 0 20px rgba(139, 92, 246, 0.4),
+        0 0 40px rgba(59, 130, 246, 0.2),
+        0 0 60px rgba(236, 72, 153, 0.1);
+    }
+    50% {
+      box-shadow: 
+        0 0 30px rgba(139, 92, 246, 0.6),
+        0 0 60px rgba(59, 130, 246, 0.4),
+        0 0 90px rgba(236, 72, 153, 0.2);
+    }
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -302,6 +383,54 @@
     animation: bounce-subtle 2s ease-in-out infinite;
   }
 
+  /* Premium Theme Animations */
+  .animate-silver-shimmer {
+    animation: silver-shimmer 3s linear infinite;
+    background: linear-gradient(90deg, #94a3b8, #cbd5e1, #e2e8f0, #cbd5e1, #94a3b8);
+    background-size: 400% 100%;
+  }
+
+  .animate-silver-glow {
+    animation: silver-glow 2s ease-in-out infinite;
+  }
+
+  .animate-gold-glow {
+    animation: gold-glow 2s ease-in-out infinite;
+  }
+
+  .animate-gold-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-gold-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    animation: gold-shine 3s ease-in-out infinite;
+  }
+
+  .animate-diamond-sparkle {
+    animation: diamond-sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-diamond-rainbow {
+    animation: diamond-rainbow 4s ease-in-out infinite;
+  }
+
+  .animate-diamond-pulse {
+    animation: diamond-pulse 2s ease-in-out infinite;
+  }
+
   /* Animation Delays */
   .animation-delay-100 {
     animation-delay: 100ms;
@@ -332,4 +461,36 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Premium Theme Global Styles */
+.theme-silver {
+  --theme-accent: 215 16% 47%;
+  --glow-color: rgba(148, 163, 184, 0.4);
+}
+
+.theme-gold {
+  --theme-accent: 43 96% 56%;
+  --glow-color: rgba(251, 191, 36, 0.4);
+}
+
+.theme-diamond {
+  --theme-accent: 256 83% 66%;
+  --glow-color: rgba(139, 92, 246, 0.4);
+}
+
+/* Theme Card Effects */
+.theme-silver .premium-card {
+  @apply border-slate-400/30;
+  box-shadow: 0 4px 20px rgba(148, 163, 184, 0.15);
+}
+
+.theme-gold .premium-card {
+  @apply border-amber-400/30;
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.15);
+}
+
+.theme-diamond .premium-card {
+  @apply border-purple-400/30;
+  box-shadow: 0 4px 30px rgba(139, 92, 246, 0.2);
 }
