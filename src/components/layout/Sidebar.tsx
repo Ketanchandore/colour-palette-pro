@@ -48,6 +48,9 @@ const navItems = [
 ];
 
 const advancedTools = [
+  { icon: Palette, label: "Color Explorer", path: "/color-explorer", locked: true },
+  { icon: Eye, label: "Live UI Preview", path: "/live-preview", locked: true },
+  { icon: Eye, label: "Contrast Checker", path: "/contrast-checker", locked: true },
   { icon: Eye, label: "UI Simulator", path: "/ui-simulator", locked: true },
   { icon: Building2, label: "URL Extractor", path: "/url-extractor", locked: true },
   { icon: Eye, label: "Accessibility", path: "/accessibility", locked: true },

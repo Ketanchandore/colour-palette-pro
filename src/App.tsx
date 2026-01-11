@@ -29,6 +29,9 @@ import DataVizStudio from "./pages/DataVizStudio";
 import ProjectWorkspace from "./pages/ProjectWorkspace";
 import ColorSpaceConverter from "./pages/ColorSpaceConverter";
 import Subscription from "./pages/Subscription";
+import ColorExplorer from "./pages/ColorExplorer";
+import LiveUIPreview from "./pages/LiveUIPreview";
+import ContrastChecker from "./pages/ContrastChecker";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -66,6 +69,10 @@ const App = () => (
               <Route path="/data-viz-studio" element={<DataVizStudio />} />
               <Route path="/project-workspace" element={<ProjectWorkspace />} />
               <Route path="/color-space-converter" element={<ColorSpaceConverter />} />
+              <Route path="/color/:hex" element={<ColorExplorer />} />
+              <Route path="/color-explorer" element={<ColorExplorer />} />
+              <Route path="/live-preview" element={<LiveUIPreview />} />
+              <Route path="/contrast-checker" element={<ContrastChecker />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
