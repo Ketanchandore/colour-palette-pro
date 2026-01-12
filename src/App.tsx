@@ -32,6 +32,12 @@ import Subscription from "./pages/Subscription";
 import ColorExplorer from "./pages/ColorExplorer";
 import LiveUIPreview from "./pages/LiveUIPreview";
 import ContrastChecker from "./pages/ContrastChecker";
+import ColorIndex from "./pages/ColorIndex";
+import ColorPage from "./pages/ColorPage";
+import TrendsIndex from "./pages/TrendsIndex";
+import CloudDancer2026 from "./pages/CloudDancer2026";
+import Mermaidcore2026 from "./pages/Mermaidcore2026";
+import ThermalGlow2026 from "./pages/ThermalGlow2026";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -69,10 +75,15 @@ const App = () => (
               <Route path="/data-viz-studio" element={<DataVizStudio />} />
               <Route path="/project-workspace" element={<ProjectWorkspace />} />
               <Route path="/color-space-converter" element={<ColorSpaceConverter />} />
-              <Route path="/color/:hex" element={<ColorExplorer />} />
+              <Route path="/color/:hex" element={<ColorPage />} />
               <Route path="/color-explorer" element={<ColorExplorer />} />
+              <Route path="/colors" element={<ColorIndex />} />
               <Route path="/live-preview" element={<LiveUIPreview />} />
               <Route path="/contrast-checker" element={<ContrastChecker />} />
+              <Route path="/trends" element={<TrendsIndex />} />
+              <Route path="/trends/cloud-dancer-2026" element={<CloudDancer2026 />} />
+              <Route path="/trends/mermaidcore-2026" element={<Mermaidcore2026 />} />
+              <Route path="/trends/thermal-glow-2026" element={<ThermalGlow2026 />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
