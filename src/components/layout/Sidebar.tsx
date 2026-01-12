@@ -39,6 +39,8 @@ const navItems = [
   { icon: Home, label: "Dashboard", path: "/" },
   { icon: Palette, label: "Generator", path: "/generator" },
   { icon: TrendingUp, label: "Trending", path: "/trending" },
+  { icon: Sparkles, label: "2026 Trends", path: "/trends" },
+  { icon: Palette, label: "Color Database", path: "/colors" },
   { icon: FolderOpen, label: "Collections", path: "/collections" },
   { icon: Wrench, label: "Color Tools", path: "/tools" },
   { icon: ImageIcon, label: "Image Extractor", path: "/image-extractor" },
