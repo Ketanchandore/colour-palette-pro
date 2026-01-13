@@ -25,7 +25,8 @@ import {
   Crown,
   Star,
   Gem,
-  Zap
+  Zap,
+  Trophy
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
@@ -73,6 +74,7 @@ const advancedTools = [
 
 const userItems = [
   { icon: Heart, label: "My Favorites", path: "/favorites" },
+  { icon: Trophy, label: "Leaderboard", path: "/leaderboard" },
   { icon: User, label: "Profile", path: "/profile" },
 ];
 

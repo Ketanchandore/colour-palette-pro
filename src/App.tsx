@@ -38,6 +38,7 @@ import TrendsIndex from "./pages/TrendsIndex";
 import CloudDancer2026 from "./pages/CloudDancer2026";
 import Mermaidcore2026 from "./pages/Mermaidcore2026";
 import ThermalGlow2026 from "./pages/ThermalGlow2026";
+import Leaderboard from "./pages/Leaderboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -84,6 +85,7 @@ const App = () => (
               <Route path="/trends/cloud-dancer-2026" element={<CloudDancer2026 />} />
               <Route path="/trends/mermaidcore-2026" element={<Mermaidcore2026 />} />
               <Route path="/trends/thermal-glow-2026" element={<ThermalGlow2026 />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

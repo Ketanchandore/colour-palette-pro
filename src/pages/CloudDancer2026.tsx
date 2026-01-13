@@ -4,8 +4,7 @@ import { Copy, Download, Palette, Star, TrendingUp, Award, Sparkles } from 'luci
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import SEOHead from '@/components/seo/SEOHead';
 import { toast } from 'sonner';
 
@@ -74,7 +73,7 @@ const CloudDancer2026 = () => {
   };
 
   return (
-    <>
+    <MainLayout>
       <SEOHead 
         title="Cloud Dancer - Pantone Color of the Year 2026 | HEX, RGB, Palettes"
         description="Complete guide to Cloud Dancer (Pantone 11-4201), the 2026 Color of the Year. Get HEX codes, RGB values, matching palettes, and web design inspiration."
@@ -83,10 +82,7 @@ const CloudDancer2026 = () => {
         structuredData={structuredData}
       />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        <main className="pt-20">
+      <div className="space-y-0 -m-6 lg:-m-8">
           {/* Hero Section */}
           <section 
             className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
@@ -291,34 +287,31 @@ const CloudDancer2026 = () => {
             </div>
           </section>
           
-          {/* Related Trends */}
-          <section className="py-20 bg-muted/30">
-            <div className="container mx-auto px-4 text-center">
-              <h2 className="text-3xl font-bold mb-8">Explore 2026 Trends</h2>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/trends/mermaidcore-2026">
-                  <Button variant="outline" size="lg">
-                    Mermaidcore Aesthetic →
-                  </Button>
-                </Link>
-                <Link to="/trends/thermal-glow-2026">
-                  <Button variant="outline" size="lg">
-                    Thermal Glow Palette →
-                  </Button>
-                </Link>
-                <Link to="/colors">
-                  <Button variant="outline" size="lg">
-                    Browse All Colors →
-                  </Button>
-                </Link>
-              </div>
+        {/* Related Trends */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-8">Explore 2026 Trends</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/trends/mermaidcore-2026">
+                <Button variant="outline" size="lg">
+                  Mermaidcore Aesthetic →
+                </Button>
+              </Link>
+              <Link to="/trends/thermal-glow-2026">
+                <Button variant="outline" size="lg">
+                  Thermal Glow Palette →
+                </Button>
+              </Link>
+              <Link to="/colors">
+                <Button variant="outline" size="lg">
+                  Browse All Colors →
+                </Button>
+              </Link>
             </div>
-          </section>
-        </main>
-        
-        <Footer />
+          </div>
+        </section>
       </div>
-    </>
+    </MainLayout>
   );
 };
 

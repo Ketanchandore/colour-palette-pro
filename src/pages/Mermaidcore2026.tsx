@@ -4,8 +4,7 @@ import { Copy, Palette, Waves, Sparkles, Gem, Shell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import SEOHead from '@/components/seo/SEOHead';
 import { toast } from 'sonner';
 
@@ -76,7 +75,7 @@ const Mermaidcore2026 = () => {
   };
 
   return (
-    <>
+    <MainLayout>
       <SEOHead 
         title="Mermaidcore 2026 - Iridescent Teal & Pearl Palette | COLOUR PINE"
         description="Explore the Mermaidcore aesthetic trend for 2026. Get iridescent teals, pearl shimmer, and amethyst violet color codes with HEX, RGB values."
@@ -85,10 +84,7 @@ const Mermaidcore2026 = () => {
         structuredData={structuredData}
       />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        <main className="pt-20">
+      <div className="space-y-0 -m-6 lg:-m-8">
           {/* Hero Section */}
           <section 
             className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
@@ -287,34 +283,31 @@ const Mermaidcore2026 = () => {
             </div>
           </section>
           
-          {/* Related Trends */}
-          <section className="py-20 bg-gradient-to-r from-[#0D4F5C] to-[#9966CC]">
-            <div className="container mx-auto px-4 text-center">
-              <h2 className="text-3xl font-bold mb-8 text-white">Explore More 2026 Trends</h2>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/trends/cloud-dancer-2026">
-                  <Button variant="secondary" size="lg">
-                    Cloud Dancer 2026 →
-                  </Button>
-                </Link>
-                <Link to="/trends/thermal-glow-2026">
-                  <Button variant="secondary" size="lg">
-                    Thermal Glow →
-                  </Button>
-                </Link>
-                <Link to="/colors">
-                  <Button variant="secondary" size="lg">
-                    All Colors →
-                  </Button>
-                </Link>
-              </div>
+        {/* Related Trends */}
+        <section className="py-20 bg-gradient-to-r from-[#0D4F5C] to-[#9966CC]">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-8 text-white">Explore More 2026 Trends</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/trends/cloud-dancer-2026">
+                <Button variant="secondary" size="lg">
+                  Cloud Dancer 2026 →
+                </Button>
+              </Link>
+              <Link to="/trends/thermal-glow-2026">
+                <Button variant="secondary" size="lg">
+                  Thermal Glow →
+                </Button>
+              </Link>
+              <Link to="/colors">
+                <Button variant="secondary" size="lg">
+                  All Colors →
+                </Button>
+              </Link>
             </div>
-          </section>
-        </main>
-        
-        <Footer />
+          </div>
+        </section>
       </div>
-    </>
+    </MainLayout>
   );
 };
 
