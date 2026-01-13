@@ -2,13 +2,9 @@ import { Link } from 'react-router-dom';
 import { Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
-import { useSidebar } from '@/hooks/useSidebar';
-import { cn } from '@/lib/utils';
 
 export const Header = () => {
   const { user } = useAuth();
-  const { toggle } = useSidebar();
-
   return (
     <header className="fixed top-0 left-0 right-0 z-40 h-16 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto h-full flex items-center justify-between px-4">
