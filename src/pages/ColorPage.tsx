@@ -7,8 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 import SEOHead from '@/components/seo/SEOHead';
 import { getColorInfo, getComplementary, getAnalogous, getTriadic, getSplitComplementary, hexToRgb, rgbToHsl } from '@/lib/colorData';
 import { getContrastRatio, getWCAGLevel, getLuminance } from '@/lib/colorUtils';
@@ -127,7 +126,7 @@ const ColorPage = () => {
   };
 
   return (
-    <>
+    <MainLayout>
       <SEOHead 
         title={`${colorInfo.name} (#${cleanHex}) - HEX, RGB, HSL & Matching Colors | COLOUR PINE`}
         description={`${colorInfo.name} color (#${cleanHex}): ${colorInfo.psychology}. Get RGB(${rgb.r}, ${rgb.g}, ${rgb.b}), HSL, CMYK values, complementary colors, and ready-to-use code.`}
@@ -136,10 +135,7 @@ const ColorPage = () => {
         structuredData={structuredData}
       />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        <main className="container mx-auto px-4 py-8 pt-24">
+      <div className="p-6 lg:p-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
             <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
@@ -338,19 +334,17 @@ const ColorPage = () => {
           </section>
           
           {/* Back to Colors */}
-          <div className="text-center">
-            <Link to="/colors">
-              <Button size="lg" variant="outline">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Explore More Colors
-              </Button>
-            </Link>
-          </div>
-        </main>
-        
-        <Footer />
+        {/* Back to Colors */}
+        <div className="text-center">
+          <Link to="/colors">
+            <Button size="lg" variant="outline">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Explore More Colors
+            </Button>
+          </Link>
+        </div>
       </div>
-    </>
+    </MainLayout>
   );
 };
 
