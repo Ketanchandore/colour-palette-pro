@@ -51,6 +51,7 @@ const navItems = [
 
 const advancedTools = [
   { icon: Palette, label: "Color Explorer", path: "/color-explorer", locked: true },
+  { icon: Palette, label: "50K+ Color Database", path: "/colors", locked: true },
   { icon: Eye, label: "Live UI Preview", path: "/live-preview", locked: true },
   { icon: Eye, label: "Contrast Checker", path: "/contrast-checker", locked: true },
   { icon: Eye, label: "UI Simulator", path: "/ui-simulator", locked: true },
@@ -64,6 +65,10 @@ const advancedTools = [
   { icon: BarChart3, label: "Data Viz Studio", path: "/data-viz-studio", locked: true },
   { icon: FolderKanban, label: "Project Workspace", path: "/project-workspace", locked: true },
   { icon: RefreshCw, label: "Color Space Converter", path: "/color-space-converter", locked: true },
+  { icon: Sparkles, label: "2026 Trends Hub", path: "/trends", locked: true },
+  { icon: Sparkles, label: "Cloud Dancer 2026", path: "/trends/cloud-dancer-2026", locked: true },
+  { icon: Sparkles, label: "Mermaidcore 2026", path: "/trends/mermaidcore-2026", locked: true },
+  { icon: Sparkles, label: "Thermal Glow 2026", path: "/trends/thermal-glow-2026", locked: true },
 ];
 
 const userItems = [
