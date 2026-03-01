@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://colourpine.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://colourpine.com/generator</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://colourpine.com/trending</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://colourpine.com/collections</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/tools</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/colors</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://colourpine.com/color-explorer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/trends</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/trends/cloud-dancer-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/trends/mermaidcore-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/trends/thermal-glow-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/image-extractor</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/ai-suggestions</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/brand-colors</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/blindness-simulator</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/contrast-checker</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/color-space-converter</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/live-preview</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/ui-simulator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/url-extractor</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/accessibility</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/code-export</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/mood-search</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/brand-architect</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://colourpine.com/social-kit</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/data-viz-studio</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/leaderboard</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/ui-designer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/palettes/frontend-developer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/compare/hex-vs-rgb-vs-hsl</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/glossary/color-theory</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

@@ -26,7 +26,10 @@ import {
   Star,
   Gem,
   Zap,
-  Trophy
+  Trophy,
+  BookOpen,
+  GitCompare,
+  FileText
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
@@ -70,6 +73,13 @@ const advancedTools = [
   { icon: Sparkles, label: "Cloud Dancer 2026", path: "/trends/cloud-dancer-2026", locked: true },
   { icon: Sparkles, label: "Mermaidcore 2026", path: "/trends/mermaidcore-2026", locked: true },
   { icon: Sparkles, label: "Thermal Glow 2026", path: "/trends/thermal-glow-2026", locked: true },
+];
+
+const resourceItems = [
+  { icon: FileText, label: "UI Designer Palettes", path: "/palettes/ui-designer" },
+  { icon: FileText, label: "Developer Palettes", path: "/palettes/frontend-developer" },
+  { icon: GitCompare, label: "HEX vs RGB vs HSL", path: "/compare/hex-vs-rgb-vs-hsl" },
+  { icon: BookOpen, label: "Color Theory Guide", path: "/glossary/color-theory" },
 ];
 
 const userItems = [
@@ -234,6 +244,34 @@ export function Sidebar() {
                       {isLocked && (
                         <Lock className="w-3 h-3 ml-auto text-amber-500" />
                       )}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Resources Section */}
+            <div className="mt-6">
+              <p className="px-3 lg:px-4 mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                <BookOpen className="w-3 h-3" /> Resources
+              </p>
+              <div className="space-y-1">
+                {resourceItems.map((item) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={handleLinkClick}
+                      className={cn(
+                        "flex items-center gap-3 px-3 py-2 lg:px-4 rounded-xl text-sm font-medium transition-all duration-200",
+                        isActive
+                          ? "bg-sidebar-primary text-sidebar-primary-foreground shadow-glow-sm"
+                          : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground active:scale-[0.98]"
+                      )}
+                    >
+                      <item.icon className="w-4 h-4 flex-shrink-0" />
+                      <span className="truncate">{item.label}</span>
                     </Link>
                   );
                 })}
