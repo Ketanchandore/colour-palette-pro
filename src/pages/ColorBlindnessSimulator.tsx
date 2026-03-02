@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { Eye, EyeOff, Copy, Upload, Info } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -108,6 +109,12 @@ export default function ColorBlindnessSimulator() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Color Blindness Simulator — Test Accessibility for All Vision Types | Colour Pine"
+        description="Simulate protanopia, deuteranopia, tritanopia, and achromatopsia on your color palette. Test how color-blind users see your design. Free accessibility tool."
+        keywords="color blindness simulator, protanopia test, deuteranopia simulator, accessibility color test, colorblind design tool"
+        canonicalUrl="https://colourpine.com/blindness-simulator"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div>

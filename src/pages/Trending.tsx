@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { TrendingUp, Flame, Clock, Filter } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { PaletteCard } from "@/components/palette/PaletteCard";
@@ -125,6 +126,12 @@ export default function Trending() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Trending Color Palettes 2026 — Most Popular Combinations | Colour Pine"
+        description="Discover the most popular and trending color palettes. Browse by category, sort by likes or recent. Curated color schemes for designers and developers."
+        keywords="trending color palettes, popular color combinations, best color schemes 2026, design color trends, top rated palettes"
+        canonicalUrl="https://colourpine.com/trending"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

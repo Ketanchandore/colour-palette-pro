@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -103,6 +104,12 @@ ${brandKit.fonts.map(f => `  --font-${f.type.toLowerCase()}: '${f.name}', ${f.fa
 
   return (
     <MainLayout>
+      <SEOHead
+        title="URL Brand Color Extractor — Extract Colors from Any Website | Colour Pine"
+        description="Enter any website URL and instantly extract its brand colors, fonts, and button styles. Reverse-engineer any brand's design system. Free online tool."
+        keywords="url color extractor, website brand colors, extract colors from website, brand kit extractor, design system reverse engineer"
+        canonicalUrl="https://colourpine.com/url-extractor"
+      />
       <div className="space-y-6">
         {/* Header */}
         <div>

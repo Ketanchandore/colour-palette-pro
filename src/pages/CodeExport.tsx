@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -151,6 +152,12 @@ ${colors.map(c => `      "--${c.name}: ${c.hex};",`).join('\n')}
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Color Code Export — CSS, Tailwind, SCSS, Swift & Flutter | Colour Pine"
+        description="Export your color palette as CSS variables, Tailwind config, SCSS, Swift UIColor, or Flutter colors. Copy production-ready code instantly. Free developer tool."
+        keywords="color code export, css color variables, tailwind color config, scss variables, swift uicolor, flutter color palette"
+        canonicalUrl="https://colourpine.com/code-export"
+      />
       <div className="space-y-6">
         {/* Header */}
         <div>

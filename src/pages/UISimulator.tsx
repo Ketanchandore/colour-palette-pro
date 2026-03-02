@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -62,6 +63,12 @@ export default function UISimulator() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="UI Color Simulator — Preview Palettes on Real Interfaces | Colour Pine"
+        description="Test your color palette on realistic UI mockups. See how colors look on dashboards, landing pages, and mobile apps. Supports dark mode preview. Free tool."
+        keywords="ui color simulator, palette preview mockup, dashboard color test, landing page color preview, dark mode palette test"
+        canonicalUrl="https://colourpine.com/ui-simulator"
+      />
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">

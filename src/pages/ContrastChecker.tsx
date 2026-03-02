@@ -16,8 +16,7 @@ import {
   Lock,
   Sparkles
 } from "lucide-react";
-import { useSubscription } from "@/hooks/useSubscription";
-import { LockedFeatureOverlay } from "@/components/subscription/LockedFeatureOverlay";
+import SEOHead from "@/components/seo/SEOHead";
 
 // Calculate relative luminance
 const getLuminance = (hex: string): number => {
@@ -92,7 +91,7 @@ const suggestBetterColor = (foreground: string, background: string, targetRatio:
 export default function ContrastChecker() {
   const [foreground, setForeground] = useState("#A05AFF");
   const [background, setBackground] = useState("#FFFFFF");
-  const { canUseAdvancedTools } = useSubscription();
+  
 
   const contrastRatio = useMemo(() => {
     return getContrastRatio(foreground, background);
@@ -126,32 +125,14 @@ UI Components: ${graphicsUI.level}`;
     toast({ title: "Copied!", description: "Results copied to clipboard" });
   };
 
-  if (!canUseAdvancedTools) {
-    return (
-      <MainLayout>
-        <div className="p-4 lg:p-8 min-h-screen">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary mb-4">
-                <Eye className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-3xl lg:text-4xl font-display font-bold mb-2">
-                Color Contrast Checker
-              </h1>
-              <p className="text-muted-foreground text-lg">
-                WCAG accessibility compliance tool
-              </p>
-            </div>
-            
-            <LockedFeatureOverlay feature="Color Contrast Checker" />
-          </div>
-        </div>
-      </MainLayout>
-    );
-  }
-
   return (
     <MainLayout>
+      <SEOHead
+        title="WCAG Color Contrast Checker — Free Accessibility Tool | Colour Pine"
+        description="Check color contrast ratios for WCAG 2.1 AA and AAA compliance. Free online contrast checker for text, UI components, and accessibility testing."
+        keywords="wcag contrast checker, color contrast ratio, accessibility checker, aa aaa compliance, web accessibility"
+        canonicalUrl="https://colourpine.com/contrast-checker"
+      />
       <div className="p-4 lg:p-8 min-h-screen">
         <div className="max-w-4xl mx-auto">
           {/* Header */}

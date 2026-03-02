@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -94,6 +95,12 @@ export default function MoodAISearch() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Mood-Based AI Color Search — Find Palettes by Feeling | Colour Pine"
+        description="Search for color palettes by mood, emotion, or vibe. AI-powered mood color matching with psychology insights and use cases. Free creative color tool."
+        keywords="mood color search, color by emotion, ai color mood, feeling based palette, color psychology search"
+        canonicalUrl="https://colourpine.com/mood-search"
+      />
       <div className="space-y-6">
         {/* Header */}
         <div>

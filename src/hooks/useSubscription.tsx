@@ -226,35 +226,16 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
 
   const tier: SubscriptionTier = subscription?.tier || 'free';
   const config = SUBSCRIPTION_CONFIG[tier];
-  const isSubscribed = tier !== 'free';
-  const isPremium = tier === 'gold' || tier === 'diamond';
-  const level = config.level;
-  const maxUsage = config.monthlyLimit;
-  const remainingUsage = Math.max(0, maxUsage - (usage?.tool_usage_count || 0));
-  const canUseAdvancedTools = config.advancedToolsAccess;
+  // All features are now FREE for everyone
+  const isSubscribed = true;
+  const isPremium = true;
+  const level = 1;
+  const maxUsage = Infinity;
+  const remainingUsage = Infinity;
+  const canUseAdvancedTools = true;
 
+  // All features are free - always allow usage
   const checkAndIncrementUsage = async (): Promise<boolean> => {
-    if (!user) return false;
-    
-    // Unlimited for diamond
-    if (tier === 'diamond') return true;
-    
-    const currentUsage = usage?.tool_usage_count || 0;
-    if (currentUsage >= maxUsage) {
-      return false;
-    }
-
-    // Increment usage
-    const monthYear = getCurrentMonthYear();
-    await supabase
-      .from('usage_tracking')
-      .upsert({
-        user_id: user.id,
-        month_year: monthYear,
-        tool_usage_count: currentUsage + 1,
-      }, { onConflict: 'user_id,month_year' });
-
-    setUsage(prev => prev ? { ...prev, tool_usage_count: currentUsage + 1 } : null);
     return true;
   };
 

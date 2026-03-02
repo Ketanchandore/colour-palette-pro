@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { Sparkles, Wand2, Copy, RefreshCw, Loader2 } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -95,6 +96,12 @@ export default function AIColorSuggestions() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="AI Color Palette Suggestions — AI-Powered Color Generator | Colour Pine"
+        description="Let AI generate the perfect color palette for your project. Describe your brand or mood and get instant, smart color suggestions with use cases. Free AI color tool."
+        keywords="ai color palette, ai color suggestions, smart color generator, brand color ai, automatic palette generator"
+        canonicalUrl="https://colourpine.com/ai-suggestions"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div>

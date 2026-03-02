@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -108,6 +109,12 @@ export default function Leaderboard() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Color Creator Leaderboard — Top Designers & Palette Makers | Colour Pine"
+        description="See the top color creators and palette designers on Colour Pine. Compete for the #1 spot by creating the most loved color palettes."
+        keywords="color leaderboard, top palette creators, designer ranking, color community, best palette makers"
+        canonicalUrl="https://colourpine.com/leaderboard"
+      />
       <div className="p-6 lg:p-8 max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">

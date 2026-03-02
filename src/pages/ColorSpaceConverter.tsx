@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -207,6 +208,12 @@ export default function ColorSpaceConverter() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Color Space Converter — HEX, RGB, HSL, CMYK, LAB | Colour Pine"
+        description="Convert colors between HEX, RGB, HSL, CMYK, and LAB color spaces. Compare screen vs print colors with gamut warnings. Free professional color converter."
+        keywords="color space converter, hex to rgb, rgb to hsl, cmyk converter, lab color space, color format converter"
+        canonicalUrl="https://colourpine.com/color-space-converter"
+      />
       <div className="space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
