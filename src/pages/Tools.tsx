@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { Wrench, Pipette, Contrast, Palette, ArrowRightLeft, Layers } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -139,6 +140,12 @@ export default function Tools() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Free Color Tools — Picker, Contrast Checker, Gradient Generator | Colour Pine"
+        description="All-in-one color tools: color picker with HEX/RGB/HSL conversion, WCAG contrast checker, gradient generator, color converter, and shade generator. Free for designers."
+        keywords="color picker tool, gradient generator, color converter hex rgb hsl, shade generator, wcag contrast tool"
+        canonicalUrl="https://colourpine.com/tools"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div>

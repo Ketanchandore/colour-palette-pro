@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -200,6 +201,12 @@ export default function DataVizStudio() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Data Visualization Color Studio — Chart & Graph Palettes | Colour Pine"
+        description="Create accessible color palettes for data visualization. Preview on bar charts, pie charts, and line graphs. Colorblind-safe options included. Free tool."
+        keywords="data viz colors, chart color palette, graph colors, data visualization palette, colorblind safe chart colors"
+        canonicalUrl="https://colourpine.com/data-viz-studio"
+      />
       <div className="space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">

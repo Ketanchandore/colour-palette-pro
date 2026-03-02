@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { Heart, ArrowRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
@@ -92,6 +93,12 @@ export default function Favorites() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="My Favorite Palettes — Saved Color Collections | Colour Pine"
+        description="View and manage your saved favorite color palettes. Quick access to your most loved color combinations."
+        keywords="favorite palettes, saved colors, color bookmarks, my palettes"
+        canonicalUrl="https://colourpine.com/favorites"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div>

@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { RefreshCw, Lock, Unlock, Copy, Download, Save, Check } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -179,6 +180,12 @@ export default function Generator() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Color Palette Generator — Create Harmonious Color Schemes Free | Colour Pine"
+        description="Generate beautiful color palettes with complementary, analogous, triadic, and split harmony modes. Lock colors, export CSS variables, and save palettes. Free online tool."
+        keywords="color palette generator, complementary colors, analogous palette, triadic color scheme, css color variables, free palette tool"
+        canonicalUrl="https://colourpine.com/generator"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

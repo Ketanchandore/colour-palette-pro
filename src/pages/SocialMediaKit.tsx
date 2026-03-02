@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -51,6 +52,12 @@ export default function SocialMediaKit() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Social Media Color Kit — Instagram, YouTube, LinkedIn Templates | Colour Pine"
+        description="Create branded social media graphics with your color palette. Templates for Instagram, YouTube, LinkedIn, and Twitter. Export designs instantly. Free tool."
+        keywords="social media color kit, instagram template colors, youtube thumbnail palette, linkedin banner design, social media branding"
+        canonicalUrl="https://colourpine.com/social-kit"
+      />
       <div className="space-y-6">
         {/* Header */}
         <div>

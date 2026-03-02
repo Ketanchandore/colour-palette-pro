@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { Building2, Search, Copy, ExternalLink } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Input } from "@/components/ui/input";
@@ -270,6 +271,12 @@ export default function BrandColors() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Brand Color Palettes — Google, Apple, Nike & 50+ Brands | Colour Pine"
+        description="Explore color palettes of 50+ famous brands like Google, Apple, Nike, Spotify. Copy HEX codes instantly. Free brand color reference for designers."
+        keywords="brand colors, google colors hex, apple brand palette, nike color codes, brand color guide, company color palettes"
+        canonicalUrl="https://colourpine.com/brand-colors"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div>

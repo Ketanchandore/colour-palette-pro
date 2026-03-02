@@ -19,8 +19,7 @@ import {
   Palette,
   Lock
 } from "lucide-react";
-import { useSubscription } from "@/hooks/useSubscription";
-import { LockedFeatureOverlay } from "@/components/subscription/LockedFeatureOverlay";
+import SEOHead from "@/components/seo/SEOHead";
 
 const defaultPalette = {
   primary: "#A05AFF",
@@ -42,7 +41,7 @@ export default function LiveUIPreview() {
   const [colors, setColors] = useState<ColorPalette>(defaultPalette);
   const [previewDevice, setPreviewDevice] = useState<"desktop" | "tablet" | "mobile">("desktop");
   const [copiedValue, setCopiedValue] = useState<string | null>(null);
-  const { canUseAdvancedTools } = useSubscription();
+  
 
   const updateColor = (key: keyof ColorPalette, value: string) => {
     setColors(prev => ({ ...prev, [key]: value }));
@@ -86,32 +85,14 @@ export default function LiveUIPreview() {
     return luminance > 0.5 ? "#000000" : "#FFFFFF";
   };
 
-  if (!canUseAdvancedTools) {
-    return (
-      <MainLayout>
-        <div className="p-4 lg:p-8 min-h-screen">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary mb-4">
-                <Monitor className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-3xl lg:text-4xl font-display font-bold mb-2">
-                Live UI Preview
-              </h1>
-              <p className="text-muted-foreground text-lg">
-                See your palette on real landing page mockups
-              </p>
-            </div>
-            
-            <LockedFeatureOverlay feature="Live UI Preview" />
-          </div>
-        </div>
-      </MainLayout>
-    );
-  }
-
   return (
     <MainLayout>
+      <SEOHead
+        title="Live UI Preview — Test Color Palettes on Real Mockups | Colour Pine"
+        description="Preview your color palette on real landing page mockups. Test on desktop, tablet, and mobile views. Free live UI color preview tool."
+        keywords="live ui preview, color palette preview, mockup color test, responsive color preview, design preview tool"
+        canonicalUrl="https://colourpine.com/live-preview"
+      />
       <div className="p-4 lg:p-8 min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Header */}

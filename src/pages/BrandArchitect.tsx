@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -114,6 +115,12 @@ export default function BrandArchitect() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="AI Brand Architect — Generate Complete Brand Identity | Colour Pine"
+        description="AI-powered brand identity generator. Get custom color palettes, font pairings, button styles, and logo suggestions for your brand. Free brand design tool."
+        keywords="brand identity generator, ai brand architect, brand color palette, font pairing tool, brand design system generator"
+        canonicalUrl="https://colourpine.com/brand-architect"
+      />
       <div className="space-y-6">
         {/* Header */}
         <div>

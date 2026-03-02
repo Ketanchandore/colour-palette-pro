@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -201,6 +202,12 @@ export default function ProjectWorkspace() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Project Color Workspace — Organize Palettes & Design Tokens | Colour Pine"
+        description="Organize your color palettes into projects. Add notes, export design tokens, and collaborate on color systems. Free project management for designers."
+        keywords="color project workspace, design token manager, palette organizer, color system manager, designer project tool"
+        canonicalUrl="https://colourpine.com/project-workspace"
+      />
       <div className="space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">

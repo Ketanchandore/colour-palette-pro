@@ -23,8 +23,7 @@ import {
   Target,
   Layers
 } from "lucide-react";
-import { useSubscription } from "@/hooks/useSubscription";
-import { LockedFeatureOverlay } from "@/components/subscription/LockedFeatureOverlay";
+import SEOHead from "@/components/seo/SEOHead";
 import { PinterestButton } from "@/components/social/PinterestButton";
 import {
   getColorInfo,
@@ -117,7 +116,7 @@ export default function ColorExplorer() {
   const [searchQuery, setSearchQuery] = useState("");
   const [copiedValue, setCopiedValue] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const { canUseAdvancedTools } = useSubscription();
+  
 
   const color = hex ? `#${hex.toUpperCase()}` : null;
   const isValidHex = color ? /^#[0-9A-F]{6}$/i.test(color) : false;
@@ -180,31 +179,8 @@ export default function ColorExplorer() {
     </Button>
   );
 
-  if (!canUseAdvancedTools) {
-    return (
-      <MainLayout>
-        <div className="p-4 lg:p-8 min-h-screen">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary mb-4">
-                <Palette className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-3xl lg:text-4xl font-display font-bold mb-2">
-                Hex Color Explorer
-              </h1>
-              <p className="text-muted-foreground text-lg">
-                {totalColors.toLocaleString()}+ color pages with conversions, palettes & more
-              </p>
-            </div>
-            
-            <LockedFeatureOverlay feature="Hex Color Explorer" />
-          </div>
-        </div>
-      </MainLayout>
-    );
-  }
+  // Specific color view
 
-  // If viewing a specific color
   if (colorInfo && isValidHex && color) {
     return (
       <MainLayout>

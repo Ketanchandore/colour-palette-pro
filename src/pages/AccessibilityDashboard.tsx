@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -146,6 +147,12 @@ export default function AccessibilityDashboard() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Accessibility Dashboard — WCAG Color Analysis & Compliance | Colour Pine"
+        description="Comprehensive WCAG accessibility dashboard. Test contrast ratios, color blindness simulation, and get automated fix suggestions for your palette. Free tool."
+        keywords="wcag accessibility dashboard, color compliance checker, accessibility audit tool, wcag 2.1 test, color accessibility analysis"
+        canonicalUrl="https://colourpine.com/accessibility"
+      />
       <div className="space-y-6">
         {/* Header */}
         <div>

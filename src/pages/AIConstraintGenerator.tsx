@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -122,6 +123,12 @@ export default function AIConstraintGenerator() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="AI Constraint Color Generator — Custom Palettes with Rules | Colour Pine"
+        description="Generate color palettes with specific constraints: industry, mood, accessibility, and color count. AI creates palettes that follow your exact design rules. Free tool."
+        keywords="constraint color generator, ai palette with rules, custom color constraints, accessible palette generator, industry specific colors"
+        canonicalUrl="https://colourpine.com/ai-constraint-generator"
+      />
       <div className="space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">

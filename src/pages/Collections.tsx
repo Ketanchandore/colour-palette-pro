@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { FolderOpen, Leaf, Sun, Sparkles, Moon, Heart, Zap, Palette as PaletteIcon } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { PaletteCard } from "@/components/palette/PaletteCard";
@@ -112,6 +113,12 @@ export default function Collections() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Color Collections — Curated Palettes by Theme & Style | Colour Pine"
+        description="Browse curated color palette collections organized by theme: Nature, Sunset, Minimalist, Dark Mode, Pastel, and Vibrant. Hand-picked color schemes for every design project."
+        keywords="color collections, themed color palettes, nature colors, dark mode palette, pastel color scheme, minimalist colors"
+        canonicalUrl="https://colourpine.com/collections"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div>

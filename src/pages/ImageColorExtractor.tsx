@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { ImageIcon, Upload, Copy, Palette } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -127,6 +128,12 @@ export default function ImageColorExtractor() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Image Color Extractor — Extract Palette from Any Photo Free | Colour Pine"
+        description="Upload any image and instantly extract its dominant color palette. Get HEX codes, preview palettes, and copy colors. Free online image color extractor tool."
+        keywords="image color extractor, extract palette from image, photo color picker, dominant colors from image, image palette generator"
+        canonicalUrl="https://colourpine.com/image-extractor"
+      />
       <div className="p-6 lg:p-8 space-y-8">
         {/* Header */}
         <div>
