@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { 
   Home, 
   Palette, 
@@ -21,7 +21,6 @@ import {
   Sliders,
   X,
   Menu,
-  Lock,
   Crown,
   Star,
   Gem,
@@ -33,7 +32,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { useSubscription, PREMIUM_THEMES, SubscriptionTier } from "@/hooks/useSubscription";
+import { useSubscription, SubscriptionTier } from "@/hooks/useSubscription";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useSidebar } from "@/hooks/useSidebar";
@@ -54,25 +53,25 @@ const navItems = [
 ];
 
 const advancedTools = [
-  { icon: Palette, label: "Color Explorer", path: "/color-explorer", locked: true },
-  { icon: Palette, label: "50K+ Color Database", path: "/colors", locked: true },
-  { icon: Eye, label: "Live UI Preview", path: "/live-preview", locked: true },
-  { icon: Eye, label: "Contrast Checker", path: "/contrast-checker", locked: true },
-  { icon: Eye, label: "UI Simulator", path: "/ui-simulator", locked: true },
-  { icon: Building2, label: "URL Extractor", path: "/url-extractor", locked: true },
-  { icon: Eye, label: "Accessibility", path: "/accessibility", locked: true },
-  { icon: Wrench, label: "Code Export", path: "/code-export", locked: true },
-  { icon: Wand2, label: "Mood AI Search", path: "/mood-search", locked: true },
-  { icon: Palette, label: "Brand Architect", path: "/brand-architect", locked: true },
-  { icon: ImageIcon, label: "Social Media Kit", path: "/social-kit", locked: true },
-  { icon: Sliders, label: "AI Constraint Gen", path: "/ai-constraint-generator", locked: true },
-  { icon: BarChart3, label: "Data Viz Studio", path: "/data-viz-studio", locked: true },
-  { icon: FolderKanban, label: "Project Workspace", path: "/project-workspace", locked: true },
-  { icon: RefreshCw, label: "Color Space Converter", path: "/color-space-converter", locked: true },
-  { icon: Sparkles, label: "2026 Trends Hub", path: "/trends", locked: true },
-  { icon: Sparkles, label: "Cloud Dancer 2026", path: "/trends/cloud-dancer-2026", locked: true },
-  { icon: Sparkles, label: "Mermaidcore 2026", path: "/trends/mermaidcore-2026", locked: true },
-  { icon: Sparkles, label: "Thermal Glow 2026", path: "/trends/thermal-glow-2026", locked: true },
+  { icon: Palette, label: "Color Explorer", path: "/color-explorer" },
+  { icon: Palette, label: "50K+ Color Database", path: "/colors" },
+  { icon: Eye, label: "Live UI Preview", path: "/live-preview" },
+  { icon: Eye, label: "Contrast Checker", path: "/contrast-checker" },
+  { icon: Eye, label: "UI Simulator", path: "/ui-simulator" },
+  { icon: Building2, label: "URL Extractor", path: "/url-extractor" },
+  { icon: Eye, label: "Accessibility", path: "/accessibility" },
+  { icon: Wrench, label: "Code Export", path: "/code-export" },
+  { icon: Wand2, label: "Mood AI Search", path: "/mood-search" },
+  { icon: Palette, label: "Brand Architect", path: "/brand-architect" },
+  { icon: ImageIcon, label: "Social Media Kit", path: "/social-kit" },
+  { icon: Sliders, label: "AI Constraint Gen", path: "/ai-constraint-generator" },
+  { icon: BarChart3, label: "Data Viz Studio", path: "/data-viz-studio" },
+  { icon: FolderKanban, label: "Project Workspace", path: "/project-workspace" },
+  { icon: RefreshCw, label: "Color Space Converter", path: "/color-space-converter" },
+  { icon: Sparkles, label: "2026 Trends Hub", path: "/trends" },
+  { icon: Sparkles, label: "Cloud Dancer 2026", path: "/trends/cloud-dancer-2026" },
+  { icon: Sparkles, label: "Mermaidcore 2026", path: "/trends/mermaidcore-2026" },
+  { icon: Sparkles, label: "Thermal Glow 2026", path: "/trends/thermal-glow-2026" },
 ];
 
 const resourceItems = [
@@ -104,9 +103,8 @@ const tierGradients: Record<SubscriptionTier, string> = {
 
 export function Sidebar() {
   const location = useLocation();
-  const navigate = useNavigate();
   const { user, signOut } = useAuth();
-  const { tier, isSubscribed, canUseAdvancedTools, level } = useSubscription();
+  const { tier } = useSubscription();
   const { isOpen, close } = useSidebar();
   const [showSubscriptionModal, setShowSubscriptionModal] = useState(false);
 
@@ -116,16 +114,11 @@ export function Sidebar() {
     }
   };
 
-  const handleAdvancedToolClick = (e: React.MouseEvent, path: string) => {
-    if (!canUseAdvancedTools) {
-      e.preventDefault();
-      setShowSubscriptionModal(true);
-    } else {
-      handleLinkClick();
-    }
+  const handleAdvancedToolClick = (_e: React.MouseEvent, _path: string) => {
+    handleLinkClick();
   };
 
-  const theme = tier !== 'free' ? PREMIUM_THEMES[tier as keyof typeof PREMIUM_THEMES] : null;
+  
 
   return (
     <>
@@ -175,21 +168,13 @@ export function Sidebar() {
             </Button>
           </div>
 
-          {/* Premium Badge */}
-          {isSubscribed && (
-            <div className="mx-4 mb-4">
-              <div className={cn(
-                "flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-white text-sm font-medium bg-gradient-to-r",
-                tierGradients[tier],
-                tier === 'silver' && "animate-silver-shimmer",
-                tier === 'gold' && "animate-gold-shine",
-                tier === 'diamond' && "animate-diamond-rainbow"
-              )}>
-                {tierIcons[tier]}
-                <span>{tier.charAt(0).toUpperCase() + tier.slice(1)} • Level {level}</span>
-              </div>
+          {/* All Tools Free Badge */}
+          <div className="mx-4 mb-4">
+            <div className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-white text-sm font-medium bg-gradient-to-r from-emerald-500 to-teal-600">
+              <Zap className="w-4 h-4" />
+              <span>All Tools Free ✨</span>
             </div>
-          )}
+          </div>
 
           {/* Main Navigation - Scrollable */}
           <nav className="flex-1 px-3 py-2 lg:px-4 lg:py-4 overflow-y-auto overscroll-contain">
@@ -219,31 +204,25 @@ export function Sidebar() {
             <div className="mt-6">
               <p className="px-3 lg:px-4 mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
                 Advanced Tools
-                {!canUseAdvancedTools && <Lock className="w-3 h-3" />}
               </p>
               <div className="space-y-1">
                 {advancedTools.map((item) => {
                   const isActive = location.pathname === item.path;
-                  const isLocked = item.locked && !canUseAdvancedTools;
                   
                   return (
                     <Link
-                      key={item.path}
-                      to={isLocked ? "#" : item.path}
+                      key={item.path + item.label}
+                      to={item.path}
                       onClick={(e) => handleAdvancedToolClick(e, item.path)}
                       className={cn(
                         "flex items-center gap-3 px-3 py-2 lg:px-4 rounded-xl text-sm font-medium transition-all duration-200 relative",
-                        isActive && !isLocked
+                        isActive
                           ? "bg-sidebar-primary text-sidebar-primary-foreground shadow-glow-sm"
-                          : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground active:scale-[0.98]",
-                        isLocked && "opacity-60"
+                          : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground active:scale-[0.98]"
                       )}
                     >
                       <item.icon className="w-4 h-4 flex-shrink-0" />
                       <span className="truncate">{item.label}</span>
-                      {isLocked && (
-                        <Lock className="w-3 h-3 ml-auto text-amber-500" />
-                      )}
                     </Link>
                   );
                 })}
@@ -308,21 +287,7 @@ export function Sidebar() {
               </div>
             )}
 
-            {/* Subscription CTA */}
-            {!isSubscribed && (
-              <div className="mt-6 px-2">
-                <button
-                  onClick={() => setShowSubscriptionModal(true)}
-                  className="w-full p-4 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-white shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] group"
-                >
-                  <div className="flex items-center justify-center gap-2 mb-1">
-                    <Crown className="w-5 h-5 group-hover:animate-bounce" />
-                    <span className="font-bold">Go Premium</span>
-                  </div>
-                  <p className="text-xs opacity-90">Unlock all features from ₹49/mo</p>
-                </button>
-              </div>
-            )}
+            {/* Free Badge */}
           </nav>
 
           {/* User Actions */}
@@ -342,15 +307,8 @@ export function Sidebar() {
                     <p className="text-sm font-medium text-sidebar-foreground truncate">
                       {user.email?.split("@")[0]}
                     </p>
-                    <p className="text-xs text-muted-foreground truncate flex items-center gap-1">
-                      {isSubscribed ? (
-                        <>
-                          {tierIcons[tier]}
-                          <span className="capitalize">{tier}</span>
-                        </>
-                      ) : (
-                        user.email
-                      )}
+                    <p className="text-xs text-muted-foreground truncate">
+                      {user.email}
                     </p>
                   </div>
                 </div>
@@ -385,17 +343,9 @@ export function Sidebar() {
   );
 }
 
-// Mobile header with menu toggle and premium badge
+// Mobile header with menu toggle
 export function MobileHeader() {
   const { toggle, isOpen } = useSidebar();
-  const { tier, isSubscribed, level } = useSubscription();
-  
-  const tierGradients: Record<SubscriptionTier, string> = {
-    free: "from-gray-400 to-gray-600",
-    silver: "from-slate-300 via-gray-400 to-slate-500",
-    gold: "from-yellow-400 via-amber-500 to-yellow-600",
-    diamond: "from-cyan-300 via-blue-400 to-purple-500",
-  };
 
   return (
     <header className={cn(
@@ -413,26 +363,17 @@ export function MobileHeader() {
           <Menu className="w-5 h-5" />
         </Button>
         <div className="flex items-center gap-2 ml-3">
-          <div className={cn(
-            "w-8 h-8 rounded-lg flex items-center justify-center",
-            tier !== 'free' ? `bg-gradient-to-br ${tierGradients[tier]}` : "gradient-primary"
-          )}>
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center gradient-primary">
             <Sparkles className="w-4 h-4 text-white" />
           </div>
           <span className="font-display font-bold text-foreground">Colour Pine</span>
         </div>
       </div>
 
-      {/* Premium Badge in Header */}
-      {isSubscribed && (
-        <Badge className={cn(
-          "bg-gradient-to-r text-white border-0",
-          tierGradients[tier]
-        )}>
-          {tierIcons[tier]}
-          <span className="ml-1 capitalize">{tier}</span>
-        </Badge>
-      )}
+      <Badge className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white border-0">
+        <Zap className="w-3 h-3" />
+        <span className="ml-1">Free</span>
+      </Badge>
     </header>
   );
 }
