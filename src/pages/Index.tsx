@@ -4,6 +4,7 @@ import { Palette, TrendingUp, Users, ArrowRight } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { HeroSection } from "@/components/dashboard/HeroSection";
 import { StatsCard } from "@/components/dashboard/StatsCard";
+import { ColorOfTheDay } from "@/components/dashboard/ColorOfTheDay";
 import { PaletteCard } from "@/components/palette/PaletteCard";
 import { Button } from "@/components/ui/button";
 import { InternalLinks } from "@/components/seo/InternalLinks";
@@ -90,6 +91,9 @@ export default function Index() {
       <div className="p-6 lg:p-8 space-y-8">
         {/* Hero Section */}
         <HeroSection />
+
+        {/* Color of the Day */}
+        <ColorOfTheDay />
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

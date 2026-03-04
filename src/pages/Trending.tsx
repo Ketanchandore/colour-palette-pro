@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { TrendingUp, Flame, Clock, Filter } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { PaletteCard } from "@/components/palette/PaletteCard";
@@ -219,6 +220,15 @@ export default function Trending() {
             <p className="text-muted-foreground">No palettes found</p>
           </div>
         )}
+
+        <InternalLinks links={[
+          { label: "Palette Generator", path: "/generator", description: "Create your own harmonious color palettes" },
+          { label: "Color Collections", path: "/collections", description: "Browse curated themed collections" },
+          { label: "2026 Color Trends", path: "/trends", description: "Explore trending palettes for 2026" },
+          { label: "Brand Colors", path: "/brand-colors", description: "HEX codes for 50+ famous brands" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Search 50,000+ colors" },
+          { label: "Leaderboard", path: "/leaderboard", description: "Top palette creators" },
+        ]} title="Explore More" />
       </div>
     </MainLayout>
   );

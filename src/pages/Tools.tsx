@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { Wrench, Pipette, Contrast, Palette, ArrowRightLeft, Layers } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -447,6 +448,15 @@ export default function Tools() {
             </div>
           )}
         </div>
+
+        <InternalLinks links={[
+          { label: "Palette Generator", path: "/generator", description: "Generate harmonious color palettes" },
+          { label: "Color Space Converter", path: "/color-space-converter", description: "Convert between HEX, RGB, HSL, CMYK, LAB" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "WCAG AA/AAA compliance checker" },
+          { label: "HEX vs RGB vs HSL", path: "/compare/hex-vs-rgb-vs-hsl", description: "Complete color format comparison" },
+          { label: "Accessibility Dashboard", path: "/accessibility", description: "Full WCAG analysis suite" },
+          { label: "Color Theory Guide", path: "/glossary/color-theory", description: "Learn fundamentals of color" },
+        ]} title="More Color Resources" />
       </div>
     </MainLayout>
   );

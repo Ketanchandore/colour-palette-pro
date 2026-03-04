@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { FolderOpen, Leaf, Sun, Sparkles, Moon, Heart, Zap, Palette as PaletteIcon } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { PaletteCard } from "@/components/palette/PaletteCard";
@@ -214,6 +215,15 @@ export default function Collections() {
             </p>
           </div>
         )}
+
+        <InternalLinks links={[
+          { label: "Palette Generator", path: "/generator", description: "Create custom color palettes" },
+          { label: "Trending Palettes", path: "/trending", description: "Most popular color combinations" },
+          { label: "Live UI Preview", path: "/live-preview", description: "Preview palettes on real UI mockups" },
+          { label: "Image Extractor", path: "/image-extractor", description: "Extract colors from photos" },
+          { label: "UI Designer Palettes", path: "/palettes/ui-designer", description: "Curated for UI/UX designers" },
+          { label: "Color Blindness Simulator", path: "/blindness-simulator", description: "Test accessibility of palettes" },
+        ]} title="Related Tools" />
       </div>
     </MainLayout>
   );
