@@ -1,5 +1,6 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { RefreshCw, Lock, Unlock, Copy, Download, Save, Check } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -126,6 +127,19 @@ export default function Generator() {
     );
   }, [colors, harmonyMode]);
 
+  // Spacebar shortcut
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space" && e.target === document.body) {
+        e.preventDefault();
+        generateNewPalette();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [generateNewPalette]);
+
+
   const toggleLock = (index: number) => {
     setColors((prev) =>
       prev.map((color, i) =>
@@ -194,7 +208,7 @@ export default function Generator() {
               Palette Generator
             </h1>
             <p className="text-muted-foreground mt-1">
-              Press space or click generate for new colors
+              Press <kbd className="px-2 py-0.5 rounded bg-muted border border-border text-xs font-mono">Space</kbd> or click generate for new colors
             </p>
           </div>
 
@@ -315,6 +329,15 @@ export default function Generator() {
             </div>
           ))}
         </div>
+
+        <InternalLinks links={[
+          { label: "Trending Palettes", path: "/trending", description: "Browse the most popular color palettes" },
+          { label: "Color Collections", path: "/collections", description: "Curated palettes by theme and mood" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "WCAG AA/AAA contrast validation" },
+          { label: "Code Export", path: "/code-export", description: "Export palettes as CSS, Tailwind, SCSS" },
+          { label: "AI Color Suggestions", path: "/ai-suggestions", description: "Get AI-generated palette ideas" },
+          { label: "Color Theory Guide", path: "/glossary/color-theory", description: "Learn color harmony fundamentals" },
+        ]} title="More Color Tools" />
       </div>
     </MainLayout>
   );
