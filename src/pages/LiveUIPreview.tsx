@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { InternalLinks } from "@/components/seo/InternalLinks";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
