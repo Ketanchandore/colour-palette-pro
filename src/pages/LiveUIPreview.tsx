@@ -21,7 +21,6 @@ import {
   Palette,
   Lock
 } from "lucide-react";
-import SEOHead from "@/components/seo/SEOHead";
 
 const defaultPalette = {
   primary: "#A05AFF",
