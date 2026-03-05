@@ -276,6 +276,11 @@ export default function Profile() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="My Profile — Colour Pine Color Palette Platform"
+        description="Manage your Colour Pine profile. View saved palettes, favorites, stats, and customize your creative workspace."
+        keywords="colour pine profile, saved palettes, color favorites, design workspace"
+      />
       <div className="p-6 lg:p-8 space-y-8 max-w-5xl">
         {/* Hidden file inputs */}
         <input 
