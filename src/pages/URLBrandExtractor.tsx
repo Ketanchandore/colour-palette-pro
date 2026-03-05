@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -328,6 +329,15 @@ ${brandKit.colors.map(c => `  '${c.name.toLowerCase().replace(/\s+/g, '-')}': '$
             </CardContent>
           </Card>
         )}
+
+        <InternalLinks links={[
+          { label: "Brand Colors", path: "/brand-colors", description: "HEX codes for 50+ famous brands" },
+          { label: "AI Brand Architect", path: "/brand-architect", description: "Generate complete brand identities" },
+          { label: "Image Extractor", path: "/image-extractor", description: "Extract colors from screenshots" },
+          { label: "Social Media Kit", path: "/social-kit", description: "Create branded social graphics" },
+          { label: "Code Export", path: "/code-export", description: "Export brand colors for development" },
+          { label: "Palette Generator", path: "/generator", description: "Create matching color schemes" },
+        ]} />
       </div>
     </MainLayout>
   );
