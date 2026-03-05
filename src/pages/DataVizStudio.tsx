@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -577,6 +578,15 @@ export default function DataVizStudio() {
             </Card>
           </div>
         </div>
+
+        <InternalLinks links={[
+          { label: "Palette Generator", path: "/generator", description: "Create harmonious color schemes" },
+          { label: "Color Blindness Simulator", path: "/blindness-simulator", description: "Test chart accessibility" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "Validate chart color contrast" },
+          { label: "Code Export", path: "/code-export", description: "Export chart palettes as code" },
+          { label: "AI Constraint Generator", path: "/ai-constraint-generator", description: "Generate constrained palettes" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ chart-ready colors" },
+        ]} />
       </div>
     </MainLayout>
   );

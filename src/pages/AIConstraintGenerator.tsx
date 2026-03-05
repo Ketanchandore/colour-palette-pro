@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -387,6 +388,15 @@ export default function AIConstraintGenerator() {
             )}
           </div>
         </div>
+
+        <InternalLinks links={[
+          { label: "AI Color Suggestions", path: "/ai-suggestions", description: "AI-generated palette ideas" },
+          { label: "Palette Generator", path: "/generator", description: "Create color schemes with harmony modes" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "Validate accessibility compliance" },
+          { label: "Brand Architect", path: "/brand-architect", description: "Generate complete brand identities" },
+          { label: "Data Viz Studio", path: "/data-viz-studio", description: "Chart-optimized color palettes" },
+          { label: "Code Export", path: "/code-export", description: "Export palettes as CSS, Tailwind" },
+        ]} />
       </div>
     </MainLayout>
   );

@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -543,6 +544,15 @@ export default function SocialMediaKit() {
             </div>
           </CardContent>
         </Card>
+
+        <InternalLinks links={[
+          { label: "Brand Architect", path: "/brand-architect", description: "Generate complete brand identities" },
+          { label: "Brand Colors", path: "/brand-colors", description: "HEX codes for famous brands" },
+          { label: "Image Extractor", path: "/image-extractor", description: "Extract colors from photos" },
+          { label: "Palette Generator", path: "/generator", description: "Create matching color schemes" },
+          { label: "Code Export", path: "/code-export", description: "Export as CSS, Tailwind, SCSS" },
+          { label: "Trending Palettes", path: "/trending", description: "Most popular color combinations" },
+        ]} />
       </div>
     </MainLayout>
   );
