@@ -1,5 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
+import { FAQSection } from "@/components/seo/FAQSection";
 import { ImageIcon, Upload, Copy, Palette } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -252,6 +254,21 @@ export default function ImageColorExtractor() {
             )}
           </div>
         </div>
+
+        <FAQSection faqs={[
+          { question: "How does the image color extractor work?", answer: "Upload any image and our tool analyzes pixel data to identify the dominant colors. It uses advanced color quantization algorithms to extract the most representative colors from your photo." },
+          { question: "What image formats are supported?", answer: "We support JPEG, PNG, WebP, GIF, and BMP formats. For best results, use high-resolution images with clear, distinct color areas." },
+          { question: "Can I extract colors from screenshots?", answer: "Yes! Screenshots work perfectly. This is great for extracting color palettes from websites, apps, or design mockups you want to recreate." },
+        ]} />
+
+        <InternalLinks links={[
+          { label: "AI Color Suggestions", path: "/ai-suggestions", description: "Get AI-generated palettes for your project" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ named colors with codes" },
+          { label: "Palette Generator", path: "/generator", description: "Create harmonious color schemes instantly" },
+          { label: "Brand Colors", path: "/brand-colors", description: "HEX codes for 50+ famous brands" },
+          { label: "Code Export", path: "/code-export", description: "Export colors as CSS, Tailwind, SCSS" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "WCAG AA/AAA contrast validation tool" },
+        ]} />
       </div>
     </MainLayout>
   );
