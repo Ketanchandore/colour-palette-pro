@@ -1,5 +1,7 @@
 import { useState, useMemo } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
+import { FAQSection } from "@/components/seo/FAQSection";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -550,6 +552,21 @@ export default function ColorSpaceConverter() {
             )}
           </div>
         </div>
+
+        <FAQSection faqs={[
+          { question: "What's the difference between HEX, RGB, and HSL?", answer: "HEX is a 6-character hexadecimal code (#FF5733). RGB uses red, green, blue values (0-255). HSL uses hue (0-360°), saturation (0-100%), and lightness (0-100%). HEX is compact for web, RGB is intuitive for mixing, HSL is best for adjusting colors." },
+          { question: "When should I use CMYK vs RGB?", answer: "Use RGB for screens (websites, apps, digital art) and CMYK for print (business cards, flyers, packaging). CMYK uses cyan, magenta, yellow, and key (black) inks, while RGB mixes light." },
+          { question: "How do I convert HEX to Tailwind CSS?", answer: "Enter your HEX code in our converter and it will show the closest Tailwind CSS class match. For custom colors, add the HEX value to your tailwind.config.js under the theme.extend.colors section." },
+        ]} />
+
+        <InternalLinks links={[
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ colors with all formats" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "Validate color accessibility ratios" },
+          { label: "Code Export", path: "/code-export", description: "Export as CSS, Tailwind, SCSS, Swift" },
+          { label: "HEX vs RGB vs HSL", path: "/compare/hex-vs-rgb-vs-hsl", description: "Complete color format comparison" },
+          { label: "Palette Generator", path: "/generator", description: "Create harmonious color schemes" },
+          { label: "Color Theory Guide", path: "/glossary/color-theory", description: "Learn color models and theory" },
+        ]} />
       </div>
     </MainLayout>
   );
