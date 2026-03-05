@@ -88,6 +88,11 @@ export default function Auth() {
 
   return (
     <div className="min-h-screen flex">
+      <SEOHead
+        title="Sign In — Colour Pine Free AI Color Palette Generator"
+        description="Sign in or create your free Colour Pine account. Save palettes, access AI color suggestions, WCAG tools, and 50,000+ colors."
+        keywords="sign in, create account, colour pine login, free color palette account"
+      />
       {/* Left Side - Form */}
       <div className="flex-1 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
