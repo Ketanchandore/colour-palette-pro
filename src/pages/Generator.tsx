@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import SEOHead from "@/components/seo/SEOHead";
 import { InternalLinks } from "@/components/seo/InternalLinks";
+import { FAQSection } from "@/components/seo/FAQSection";
 import { RefreshCw, Lock, Unlock, Copy, Download, Save, Check } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -329,6 +330,13 @@ export default function Generator() {
             </div>
           ))}
         </div>
+
+        <FAQSection faqs={[
+          { question: "How does the color palette generator work?", answer: "Choose a harmony mode (complementary, analogous, triadic, split) and press Generate or hit Spacebar. Our algorithm creates mathematically harmonious color schemes based on color theory principles." },
+          { question: "Can I lock specific colors in the palette?", answer: "Yes! Click the lock icon on any color swatch to keep it fixed while regenerating the rest. This is perfect when you already have a brand color and need matching companions." },
+          { question: "What color harmony modes are available?", answer: "We offer Random, Complementary (opposite on color wheel), Analogous (adjacent colors), Triadic (three equally spaced), and Split-Complementary (one color plus two adjacent to its complement)." },
+          { question: "Can I export the generated palette?", answer: "Absolutely! Copy individual HEX codes with one click, or visit our Code Export tool to get the full palette in CSS, Tailwind, SCSS, Swift, Flutter, or JSON format." },
+        ]} />
 
         <InternalLinks links={[
           { label: "Trending Palettes", path: "/trending", description: "Browse the most popular color palettes" },
