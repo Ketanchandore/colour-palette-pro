@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -542,6 +543,15 @@ export default function UISimulator() {
             </Tabs>
           </div>
         </div>
+
+        <InternalLinks links={[
+          { label: "Live UI Preview", path: "/live-preview", description: "Preview colors on landing page mockups" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "WCAG contrast ratio validation" },
+          { label: "Data Viz Studio", path: "/data-viz-studio", description: "Chart and graph color palettes" },
+          { label: "Palette Generator", path: "/generator", description: "Create harmonious color schemes" },
+          { label: "Code Export", path: "/code-export", description: "Export as CSS, Tailwind, Flutter" },
+          { label: "Color Blindness Simulator", path: "/blindness-simulator", description: "Test color visibility" },
+        ]} />
       </div>
     </MainLayout>
   );

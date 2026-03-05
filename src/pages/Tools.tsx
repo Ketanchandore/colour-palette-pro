@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
 import { InternalLinks } from "@/components/seo/InternalLinks";
+import { FAQSection } from "@/components/seo/FAQSection";
 import { Wrench, Pipette, Contrast, Palette, ArrowRightLeft, Layers } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -448,6 +449,12 @@ export default function Tools() {
             </div>
           )}
         </div>
+
+        <FAQSection faqs={[
+          { question: "Are all color tools free to use?", answer: "Yes! Every tool on Colour Pine is completely free — color picker, gradient generator, shade creator, contrast checker, and more. No account required for basic tools." },
+          { question: "What tools are included in the suite?", answer: "Our suite includes a Color Picker with real-time preview, Contrast Checker for WCAG compliance, Gradient Generator, Color Converter (HEX/RGB/HSL/CMYK), and a Shade & Tint Generator." },
+          { question: "Can I use these tools for professional design work?", answer: "Absolutely. Our tools are built to professional standards with accurate color math, WCAG 2.1 contrast calculations, and export-ready code output for production use." },
+        ]} />
 
         <InternalLinks links={[
           { label: "Palette Generator", path: "/generator", description: "Generate harmonious color palettes" },

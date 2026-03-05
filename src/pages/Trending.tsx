@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
 import { InternalLinks } from "@/components/seo/InternalLinks";
+import { FAQSection } from "@/components/seo/FAQSection";
 import { TrendingUp, Flame, Clock, Filter } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { PaletteCard } from "@/components/palette/PaletteCard";
@@ -220,6 +221,12 @@ export default function Trending() {
             <p className="text-muted-foreground">No palettes found</p>
           </div>
         )}
+
+        <FAQSection faqs={[
+          { question: "How are trending palettes determined?", answer: "Trending palettes are ranked by community engagement — likes, saves, and usage frequency. Our algorithm updates rankings daily to reflect the latest design preferences." },
+          { question: "Can I save trending palettes to my favorites?", answer: "Yes! Click the heart icon on any palette to save it to your favorites. You need a free account to save palettes and access them later." },
+          { question: "Are trending palettes free to use commercially?", answer: "All palettes on Colour Pine are free to use in personal and commercial projects. No attribution required — just copy the HEX codes and go." },
+        ]} />
 
         <InternalLinks links={[
           { label: "Palette Generator", path: "/generator", description: "Create your own harmonious color palettes" },

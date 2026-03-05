@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { Building2, Search, Copy, ExternalLink } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Input } from "@/components/ui/input";
@@ -404,6 +405,15 @@ export default function BrandColors() {
             <p className="text-sm text-muted-foreground">Try a different search term</p>
           </div>
         )}
+
+        <InternalLinks links={[
+          { label: "URL Brand Extractor", path: "/url-extractor", description: "Extract colors from any website URL" },
+          { label: "AI Brand Architect", path: "/brand-architect", description: "Generate complete brand identities" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ colors with HEX codes" },
+          { label: "Code Export", path: "/code-export", description: "Export brand colors as CSS, Tailwind" },
+          { label: "Social Media Kit", path: "/social-kit", description: "Create branded social media graphics" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "Validate brand color accessibility" },
+        ]} />
       </div>
     </MainLayout>
   );

@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { Eye, EyeOff, Copy, Upload, Info } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -334,6 +335,15 @@ export default function ColorBlindnessSimulator() {
             </div>
           </div>
         </div>
+
+        <InternalLinks links={[
+          { label: "Contrast Checker", path: "/contrast-checker", description: "WCAG AA/AAA contrast ratio validation" },
+          { label: "Accessibility Dashboard", path: "/accessibility", description: "Full WCAG compliance analysis" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ accessible colors" },
+          { label: "UI Simulator", path: "/ui-simulator", description: "Preview palettes on real UI mockups" },
+          { label: "Palette Generator", path: "/generator", description: "Create accessible color schemes" },
+          { label: "HEX vs RGB vs HSL", path: "/compare/hex-vs-rgb-vs-hsl", description: "Complete color format guide" },
+        ]} />
       </div>
     </MainLayout>
   );

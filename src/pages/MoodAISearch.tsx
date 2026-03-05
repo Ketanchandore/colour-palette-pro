@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -278,6 +279,15 @@ export default function MoodAISearch() {
             </CardContent>
           </Card>
         )}
+
+        <InternalLinks links={[
+          { label: "AI Color Suggestions", path: "/ai-suggestions", description: "Get AI-generated palettes for projects" },
+          { label: "Palette Generator", path: "/generator", description: "Create harmonious color schemes" },
+          { label: "Trending Palettes", path: "/trending", description: "Most popular color combinations" },
+          { label: "Brand Architect", path: "/brand-architect", description: "AI-powered brand identity generator" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ named colors" },
+          { label: "Collections", path: "/collections", description: "Themed palette collections" },
+        ]} />
       </div>
     </MainLayout>
   );

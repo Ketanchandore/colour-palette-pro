@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -547,6 +548,15 @@ export default function ProjectWorkspace() {
             )}
           </div>
         </div>
+
+        <InternalLinks links={[
+          { label: "Palette Generator", path: "/generator", description: "Create palettes for your project" },
+          { label: "Code Export", path: "/code-export", description: "Export project colors as code" },
+          { label: "Brand Architect", path: "/brand-architect", description: "AI brand identity generator" },
+          { label: "Collections", path: "/collections", description: "Organize palettes in collections" },
+          { label: "Favorites", path: "/favorites", description: "Save your favorite palettes" },
+          { label: "Trending Palettes", path: "/trending", description: "Popular color combinations" },
+        ]} />
       </div>
     </MainLayout>
   );

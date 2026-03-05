@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -282,6 +283,15 @@ export default function Leaderboard() {
             Refresh Rankings
           </Button>
         </div>
+
+        <InternalLinks links={[
+          { label: "Trending Palettes", path: "/trending", description: "Most popular color combinations" },
+          { label: "Palette Generator", path: "/generator", description: "Create your own palettes" },
+          { label: "Collections", path: "/collections", description: "Themed palette collections" },
+          { label: "Favorites", path: "/favorites", description: "Your saved palettes" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ colors" },
+          { label: "AI Suggestions", path: "/ai-suggestions", description: "AI-generated palette ideas" },
+        ]} />
       </div>
     </MainLayout>
   );

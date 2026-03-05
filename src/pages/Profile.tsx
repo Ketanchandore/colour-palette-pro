@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { User, Mail, Calendar, Palette, Heart, Settings, Shield, Bell, Sparkles, TrendingUp, Eye, Edit3, Camera, Award, Zap, Check, X, Crown, Star, Gem } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
@@ -275,6 +276,11 @@ export default function Profile() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="My Profile — Colour Pine Color Palette Platform"
+        description="Manage your Colour Pine profile. View saved palettes, favorites, stats, and customize your creative workspace."
+        keywords="colour pine profile, saved palettes, color favorites, design workspace"
+      />
       <div className="p-6 lg:p-8 space-y-8 max-w-5xl">
         {/* Hidden file inputs */}
         <input 

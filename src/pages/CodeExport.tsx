@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -313,6 +314,15 @@ ${colors.map(c => `      "--${c.name}: ${c.hex};",`).join('\n')}
             </div>
           </CardContent>
         </Card>
+
+        <InternalLinks links={[
+          { label: "Palette Generator", path: "/generator", description: "Generate palettes to export" },
+          { label: "Color Space Converter", path: "/color-space-converter", description: "HEX, RGB, HSL, CMYK conversion" },
+          { label: "Trending Palettes", path: "/trending", description: "Export popular color combinations" },
+          { label: "Developer Palettes", path: "/palettes/frontend-developer", description: "CSS tokens and React themes" },
+          { label: "Brand Colors", path: "/brand-colors", description: "Export brand color codes" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ colors to export" },
+        ]} />
       </div>
     </MainLayout>
   );

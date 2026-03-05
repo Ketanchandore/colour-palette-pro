@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -474,6 +475,15 @@ export default function AccessibilityDashboard() {
             </Card>
           </TabsContent>
         </Tabs>
+
+        <InternalLinks links={[
+          { label: "Contrast Checker", path: "/contrast-checker", description: "WCAG AA/AAA contrast ratio tool" },
+          { label: "Color Blindness Simulator", path: "/blindness-simulator", description: "Test protanopia, deuteranopia" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ accessible colors" },
+          { label: "Code Export", path: "/code-export", description: "Export accessible color tokens" },
+          { label: "UI Simulator", path: "/ui-simulator", description: "Preview palettes on real UI" },
+          { label: "Color Theory Guide", path: "/glossary/color-theory", description: "Learn accessible color theory" },
+        ]} />
       </div>
     </MainLayout>
   );

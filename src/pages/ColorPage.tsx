@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
 import { MainLayout } from '@/components/layout/MainLayout';
 import SEOHead from '@/components/seo/SEOHead';
+import { InternalLinks } from '@/components/seo/InternalLinks';
 import { getColorInfo, getComplementary, getAnalogous, getTriadic, getSplitComplementary, hexToRgb, rgbToHsl } from '@/lib/colorData';
 import { getContrastRatio, getWCAGLevel, getLuminance } from '@/lib/colorUtils';
 
@@ -343,6 +344,15 @@ const ColorPage = () => {
             </Button>
           </Link>
         </div>
+
+        <InternalLinks links={[
+          { label: "Color Database", path: "/colors", description: "Browse all named colors A-Z" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Deep-dive into 50,000+ colors" },
+          { label: "Palette Generator", path: "/generator", description: "Create palettes from this color" },
+          { label: "Color Space Converter", path: "/color-space-converter", description: "Convert HEX, RGB, HSL, CMYK" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "Check accessibility of this color" },
+          { label: "Trending Palettes", path: "/trending", description: "Popular color combinations" },
+        ]} />
       </div>
     </MainLayout>
   );

@@ -1,6 +1,8 @@
 import { useState, useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
+import { InternalLinks } from "@/components/seo/InternalLinks";
+import { FAQSection } from "@/components/seo/FAQSection";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -616,6 +618,21 @@ export default function ColorExplorer() {
               </p>
             </div>
           </Card>
+
+          <FAQSection faqs={[
+            { question: "How many colors are in the Colour Pine database?", answer: "Our database contains over 50,000 named colors, each with HEX, RGB, HSL, CMYK codes, Tailwind CSS classes, color psychology notes, and suggested use cases." },
+            { question: "Can I search for colors by name or HEX code?", answer: "Yes! Use the search bar to find colors by name (e.g., 'ocean blue') or by HEX code (e.g., '#4285F4'). You can also filter by color category." },
+            { question: "What information is available for each color?", answer: "Each color page includes the color swatch, HEX/RGB/HSL/CMYK values, complementary and analogous palettes, Tailwind CSS class, color psychology, and real-world use case suggestions." },
+          ]} />
+
+          <InternalLinks links={[
+            { label: "Color Database", path: "/colors", description: "Browse all named colors A-Z" },
+            { label: "Palette Generator", path: "/generator", description: "Create palettes from any color" },
+            { label: "Color Space Converter", path: "/color-space-converter", description: "HEX, RGB, HSL, CMYK conversion" },
+            { label: "Contrast Checker", path: "/contrast-checker", description: "Check color accessibility" },
+            { label: "Trending Palettes", path: "/trending", description: "Popular color combinations" },
+            { label: "HEX vs RGB vs HSL", path: "/compare/hex-vs-rgb-vs-hsl", description: "Color format comparison" },
+          ]} />
         </div>
       </div>
     </MainLayout>

@@ -17,6 +17,8 @@ import {
   Sparkles
 } from "lucide-react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
+import { FAQSection } from "@/components/seo/FAQSection";
 
 // Calculate relative luminance
 const getLuminance = (hex: string): number => {
@@ -353,6 +355,21 @@ UI Components: ${graphicsUI.level}`;
             </div>
           </div>
         </div>
+
+        <FAQSection faqs={[
+          { question: "What is WCAG contrast ratio?", answer: "WCAG (Web Content Accessibility Guidelines) contrast ratio measures the luminance difference between foreground and background colors. A ratio of at least 4.5:1 is required for AA compliance on normal text, and 7:1 for AAA." },
+          { question: "What's the difference between WCAG AA and AAA?", answer: "AA is the minimum standard requiring 4.5:1 for normal text and 3:1 for large text. AAA is the enhanced standard requiring 7:1 for normal text and 4.5:1 for large text. Most websites aim for AA compliance." },
+          { question: "How do I fix low contrast ratios?", answer: "Darken your text color or lighten your background (or vice versa). Use our tool to test combinations in real-time. For colored text on colored backgrounds, ensure sufficient luminance difference." },
+        ]} />
+
+        <InternalLinks links={[
+          { label: "Accessibility Dashboard", path: "/accessibility", description: "Full WCAG compliance analysis for palettes" },
+          { label: "Color Blindness Simulator", path: "/blindness-simulator", description: "Test protanopia, deuteranopia visibility" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Find accessible colors from 50,000+ database" },
+          { label: "Code Export", path: "/code-export", description: "Export accessible palettes as CSS, Tailwind" },
+          { label: "UI Simulator", path: "/ui-simulator", description: "Preview contrast on real UI components" },
+          { label: "Color Theory Guide", path: "/glossary/color-theory", description: "Learn color harmony and accessibility" },
+        ]} />
       </div>
     </MainLayout>
   );

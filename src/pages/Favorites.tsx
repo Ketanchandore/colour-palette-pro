@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SEOHead from "@/components/seo/SEOHead";
+import { InternalLinks } from "@/components/seo/InternalLinks";
 import { Heart, ArrowRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
@@ -155,6 +156,15 @@ export default function Favorites() {
             </Link>
           </div>
         )}
+
+        <InternalLinks links={[
+          { label: "Trending Palettes", path: "/trending", description: "Discover popular color combinations" },
+          { label: "Palette Generator", path: "/generator", description: "Create new color schemes" },
+          { label: "Collections", path: "/collections", description: "Organize palettes by theme" },
+          { label: "Leaderboard", path: "/leaderboard", description: "Top palette creators" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ colors" },
+          { label: "AI Suggestions", path: "/ai-suggestions", description: "AI-generated palette ideas" },
+        ]} />
       </div>
     </MainLayout>
   );

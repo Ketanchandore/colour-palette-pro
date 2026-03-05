@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -101,6 +102,11 @@ export default function Subscription() {
 
   return (
     <MainLayout>
+      <SEOHead
+        title="Plans & Pricing — Colour Pine Color Palette Platform"
+        description="Explore Colour Pine subscription plans. Unlock premium themes, advanced AI color tools, and unlimited palette generation for designers and developers."
+        keywords="colour pine pricing, color palette subscription, premium color tools, design tool pricing"
+      />
       <div className="p-6 lg:p-8 max-w-6xl space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">

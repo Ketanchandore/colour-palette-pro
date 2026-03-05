@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { InternalLinks } from "@/components/seo/InternalLinks";
+import SEOHead from "@/components/seo/SEOHead";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -19,7 +21,6 @@ import {
   Palette,
   Lock
 } from "lucide-react";
-import SEOHead from "@/components/seo/SEOHead";
 
 const defaultPalette = {
   primary: "#A05AFF",
@@ -381,6 +382,15 @@ export default function LiveUIPreview() {
             </div>
           </div>
         </div>
+
+        <InternalLinks links={[
+          { label: "UI Simulator", path: "/ui-simulator", description: "Preview on dashboard mockups" },
+          { label: "Palette Generator", path: "/generator", description: "Create harmonious color schemes" },
+          { label: "Contrast Checker", path: "/contrast-checker", description: "WCAG contrast validation" },
+          { label: "Code Export", path: "/code-export", description: "Export palettes as CSS, Tailwind" },
+          { label: "Brand Architect", path: "/brand-architect", description: "AI brand identity generator" },
+          { label: "Social Media Kit", path: "/social-kit", description: "Branded social media graphics" },
+        ]} />
       </div>
     </MainLayout>
   );

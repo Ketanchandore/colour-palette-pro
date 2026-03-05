@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MainLayout } from '@/components/layout/MainLayout';
 import SEOHead from '@/components/seo/SEOHead';
+import { InternalLinks } from '@/components/seo/InternalLinks';
+import { FAQSection } from '@/components/seo/FAQSection';
 import { generateAllColorPages, getColorInfo, namedColors } from '@/lib/colorData';
 
 const categories = ['All', 'Red', 'Orange', 'Yellow', 'Green', 'Teal', 'Blue', 'Purple', 'Pink', 'Neutral'];
@@ -132,6 +134,21 @@ const ColorIndex = () => {
         )}
         
         {visibleCount < filteredColors.length && <div ref={loaderRef} className="flex justify-center py-8"><Loader2 className="w-6 h-6 animate-spin" /></div>}
+
+        <FAQSection faqs={[
+          { question: "How many colors are in the database?", answer: "Colour Pine's database includes 50,000+ colors spanning every shade, tint, and tone. Each color has a dedicated page with HEX, RGB, HSL, CMYK codes, and color harmony palettes." },
+          { question: "Can I search colors by category?", answer: "Yes! Filter colors by category (Red, Orange, Yellow, Green, Blue, Purple, Pink, Neutral) or search by name or HEX code using the search bar." },
+          { question: "What makes Colour Pine different from other color tools?", answer: "We combine the world's largest named color database with AI palette generation, WCAG accessibility tools, brand analysis, and 2026 trend data — all completely free." },
+        ]} />
+
+        <InternalLinks links={[
+          { label: "Color Explorer", path: "/color-explorer", description: "Deep-dive into any color with palettes" },
+          { label: "Palette Generator", path: "/generator", description: "Create harmonious color schemes" },
+          { label: "Trending Palettes", path: "/trending", description: "Most popular color combinations" },
+          { label: "Color Space Converter", path: "/color-space-converter", description: "Convert between color formats" },
+          { label: "Brand Colors", path: "/brand-colors", description: "HEX codes from famous brands" },
+          { label: "AI Color Suggestions", path: "/ai-suggestions", description: "AI-generated palette ideas" },
+        ]} />
       </div>
     </MainLayout>
   );
