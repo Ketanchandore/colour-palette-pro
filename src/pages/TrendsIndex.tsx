@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { MainLayout } from '@/components/layout/MainLayout';
 import SEOHead from '@/components/seo/SEOHead';
+import { InternalLinks } from '@/components/seo/InternalLinks';
 
 const trends2026 = [
   {
@@ -166,6 +167,15 @@ const TrendsIndex = () => {
             </Button>
           </Link>
         </div>
+
+        <InternalLinks links={[
+          { label: "Trending Palettes", path: "/trending", description: "Most popular palettes right now" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ colors" },
+          { label: "Palette Generator", path: "/generator", description: "Create trend-inspired palettes" },
+          { label: "UI Designer Palettes", path: "/palettes/ui-designer", description: "Curated for dashboards" },
+          { label: "Developer Palettes", path: "/palettes/frontend-developer", description: "CSS tokens and themes" },
+          { label: "Color Theory Guide", path: "/glossary/color-theory", description: "Learn color harmony" },
+        ]} />
       </div>
     </MainLayout>
   );

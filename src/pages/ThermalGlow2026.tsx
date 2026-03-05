@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MainLayout } from '@/components/layout/MainLayout';
 import SEOHead from '@/components/seo/SEOHead';
+import { InternalLinks } from '@/components/seo/InternalLinks';
 import { toast } from 'sonner';
 
 const ThermalGlow2026 = () => {
@@ -350,6 +351,15 @@ const ThermalGlow2026 = () => {
             </div>
           </div>
         </section>
+
+        <InternalLinks links={[
+          { label: "Cloud Dancer 2026", path: "/trends/cloud-dancer-2026", description: "Pantone Color of the Year" },
+          { label: "Mermaidcore 2026", path: "/trends/mermaidcore-2026", description: "Ocean aesthetic palette" },
+          { label: "All 2026 Trends", path: "/trends", description: "Explore all trending palettes" },
+          { label: "Palette Generator", path: "/generator", description: "Create heat-inspired palettes" },
+          { label: "Data Viz Studio", path: "/data-viz-studio", description: "Heat map chart palettes" },
+          { label: "Color Explorer", path: "/color-explorer", description: "Browse 50,000+ colors" },
+        ]} />
       </div>
     </MainLayout>
   );
