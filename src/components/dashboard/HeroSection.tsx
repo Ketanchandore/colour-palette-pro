@@ -31,25 +31,26 @@ export function HeroSection() {
             </Button>
           </Link>
           <Link to="/trending">
-            <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" className="border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm">
               Browse Trending
             </Button>
           </Link>
         </div>
       </div>
 
-      {/* Decorative Palette Preview */}
-      <div className="absolute right-8 bottom-8 hidden lg:flex gap-2 animate-float">
-        {["#FF6B6B", "#FEC89A", "#FFD93D", "#6BCB77", "#4D96FF"].map((color, i) => (
-          <div
-            key={i}
-            className="w-12 h-24 rounded-xl shadow-lg transform hover:scale-105 transition-transform"
-            style={{ 
-              backgroundColor: color,
-              transform: `rotate(${(i - 2) * 5}deg) translateY(${Math.abs(i - 2) * 8}px)`,
-            }}
+      {/* Hero Video */}
+      <div className="absolute right-4 top-4 bottom-4 hidden lg:flex items-center justify-center w-[45%]">
+        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover rounded-2xl"
+            src="/hero-video.mp4"
           />
-        ))}
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-sidebar/60 pointer-events-none" />
+        </div>
       </div>
     </div>
   );

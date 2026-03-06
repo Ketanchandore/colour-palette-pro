@@ -143,13 +143,7 @@ export function Sidebar() {
           <div className="flex items-center justify-between px-4 py-4 lg:px-6 lg:py-6">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className={cn(
-                  "w-10 h-10 rounded-xl flex items-center justify-center shadow-glow-sm",
-                  tier !== 'free' ? `bg-gradient-to-br ${tierGradients[tier]}` : "gradient-primary",
-                  tier === 'diamond' && "animate-diamond-sparkle"
-                )}>
-                  <Sparkles className="w-5 h-5 text-white" />
-                </div>
+                <img src="/colourpine-logo.png" alt="Colour Pine Logo" className="w-10 h-10 rounded-xl object-contain shadow-glow-sm" />
               </div>
               <div>
                 <h1 className="text-xl font-display font-bold text-sidebar-foreground">
@@ -363,9 +357,7 @@ export function MobileHeader() {
           <Menu className="w-5 h-5" />
         </Button>
         <div className="flex items-center gap-2 ml-3">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center gradient-primary">
-            <Sparkles className="w-4 h-4 text-white" />
-          </div>
+          <img src="/colourpine-logo.png" alt="Colour Pine Logo" className="w-8 h-8 rounded-lg object-contain" />
           <span className="font-display font-bold text-foreground">Colour Pine</span>
         </div>
       </div>

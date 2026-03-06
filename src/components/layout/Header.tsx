@@ -9,9 +9,7 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-40 h-16 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto h-full flex items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
-            <Sparkles className="w-5 h-5 text-white" />
-          </div>
+          <img src="/colourpine-logo.png" alt="Colour Pine Logo" className="w-10 h-10 rounded-xl object-contain" />
           <span className="text-xl font-display font-bold text-foreground">Colour Pine</span>
         </Link>
 
