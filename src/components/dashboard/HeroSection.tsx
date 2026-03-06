@@ -6,22 +6,21 @@ import { FloatingColors } from "./FloatingColors";
 export function HeroSection() {
   return (
     <div className="relative min-h-[400px] rounded-3xl overflow-hidden bg-gradient-to-br from-sidebar via-sidebar to-primary/20">
-      {/* Background video - plays on ALL devices */}
+      {/* Background video - plays on ALL devices, loop */}
       <video
         autoPlay
         loop
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
+        className="absolute inset-0 w-full h-full object-cover opacity-25"
         src="/hero-video.mp4"
       />
       
       <FloatingColors />
       
-      <div className="relative z-10 p-8 md:p-12 flex flex-col lg:flex-row items-center gap-8">
-        {/* Left content */}
-        <div className="max-w-2xl flex-1">
+      <div className="relative z-10 p-8 md:p-12">
+        <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary-foreground/90 text-sm font-medium mb-6 animate-fade-in-up">
             <Sparkles className="w-4 h-4" />
             World's Best Color Palette Generator
@@ -48,22 +47,6 @@ export function HeroSection() {
                 Browse Trending
               </Button>
             </Link>
-          </div>
-        </div>
-
-        {/* Right side video - visible on all devices */}
-        <div className="w-full lg:w-[45%] flex-shrink-0">
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="w-full h-full object-cover"
-              src="/hero-video.mp4"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-sidebar/40 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
