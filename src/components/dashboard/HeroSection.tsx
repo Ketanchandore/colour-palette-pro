@@ -52,15 +52,16 @@ export function HeroSection() {
         </div>
 
         {/* Right side video - tablet/desktop only, full brightness */}
-        <div className="hidden lg:block flex-1 max-w-md xl:max-w-lg animate-fade-in-up animation-delay-200">
-          <div className="rounded-2xl overflow-hidden shadow-lg">
+        <div className="hidden lg:flex flex-1 items-center justify-center animate-fade-in-up animation-delay-200">
+          <div className="rounded-2xl overflow-hidden shadow-lg w-full h-full">
             <video
               autoPlay
               loop
               muted
               playsInline
               preload="auto"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-2xl"
+              style={{ minHeight: '320px' }}
               src="/hero-video.mp4"
             />
           </div>
