@@ -51,21 +51,6 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right side video - visible on all devices */}
-        <div className="w-full lg:w-[45%] flex-shrink-0">
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="w-full h-full object-cover"
-              src="/hero-video.mp4"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-sidebar/40 via-transparent to-transparent pointer-events-none" />
-          </div>
-        </div>
       </div>
     </div>
   );
