@@ -6,14 +6,14 @@ import { FloatingColors } from "./FloatingColors";
 export function HeroSection() {
   return (
     <div className="relative min-h-[400px] rounded-3xl overflow-hidden bg-gradient-to-br from-sidebar via-sidebar to-primary/20">
-      {/* Background video - plays on ALL devices */}
+      {/* Background video - mobile only (subtle) */}
       <video
         autoPlay
         loop
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
+        className="absolute inset-0 w-full h-full object-cover opacity-40 lg:hidden"
         src="/hero-video.mp4"
       />
       
@@ -51,6 +51,20 @@ export function HeroSection() {
           </div>
         </div>
 
+        {/* Right side video - tablet/desktop only, full brightness */}
+        <div className="hidden lg:block flex-1 max-w-md xl:max-w-lg animate-fade-in-up animation-delay-200">
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover"
+              src="/hero-video.mp4"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
