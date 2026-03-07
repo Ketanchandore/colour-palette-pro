@@ -19,9 +19,24 @@ export function HeroSection() {
       
       <FloatingColors />
       
+      {/* Right side video - desktop only, full brightness, absolutely positioned */}
+      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full z-[1]">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover"
+          src="/hero-video.mp4"
+        />
+        {/* Gradient overlay for smooth blend with left content */}
+        <div className="absolute inset-0 bg-gradient-to-r from-sidebar via-sidebar/60 to-transparent" />
+      </div>
+
       <div className="relative z-10 p-8 md:p-12 flex flex-col lg:flex-row items-center gap-8">
         {/* Left content */}
-        <div className="max-w-2xl flex-1">
+        <div className="max-w-2xl lg:w-1/2 flex-shrink-0">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary-foreground/90 text-sm font-medium mb-6 animate-fade-in-up">
             <Sparkles className="w-4 h-4" />
             World's Best Color Palette Generator
@@ -48,22 +63,6 @@ export function HeroSection() {
                 Browse Trending
               </Button>
             </Link>
-          </div>
-        </div>
-
-        {/* Right side video - tablet/desktop only, full brightness */}
-        <div className="hidden lg:flex flex-1 items-center justify-center animate-fade-in-up animation-delay-200">
-          <div className="rounded-2xl overflow-hidden shadow-lg w-full h-full">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="w-full h-full object-cover rounded-2xl"
-              style={{ minHeight: '320px' }}
-              src="/hero-video.mp4"
-            />
           </div>
         </div>
       </div>
