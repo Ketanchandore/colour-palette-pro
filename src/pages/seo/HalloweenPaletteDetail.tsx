@@ -4,7 +4,7 @@ import { FAQSection } from "@/components/seo/FAQSection";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Copy, Check, ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
 
 const palettes: Record<string, {
   name: string;

@@ -198,7 +198,7 @@ export default function HalloweenColorPalette() {
               <p className="text-muted-foreground text-sm mb-4">{palette.description}</p>
               <div className="flex gap-2 sm:gap-3">
                 {palette.colors.map((color) => (
-                  <ColorSwatch key={color} color={color} name={palette.name} />
+                  <ColorSwatch key={color} color={color} />
                 ))}
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
