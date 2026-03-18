@@ -1,7 +1,7 @@
 import { SEOPageLayout } from "@/components/seo/SEOPageLayout";
 import { FAQSection } from "@/components/seo/FAQSection";
 import { Link } from "react-router-dom";
-import { Copy, Check, Palette, Eye, Sparkles } from "lucide-react";
+import { Check, Palette, Eye } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
