@@ -68,7 +68,7 @@ const halloweenPalettes = [
   },
 ];
 
-function ColorSwatch({ color, name }: { color: string; name: string }) {
+function ColorSwatch({ color }: { color: string }) {
   const [copied, setCopied] = useState(false);
 
   const copyColor = () => {
