@@ -43,6 +43,8 @@ import UIDesignerColorPalettes from "./pages/seo/UIDesignerColorPalettes";
 import FrontendDevColorPalettes from "./pages/seo/FrontendDevColorPalettes";
 import HexVsRgbComparison from "./pages/seo/HexVsRgbComparison";
 import GlossaryColorTheory from "./pages/seo/GlossaryColorTheory";
+import HalloweenColorPalette from "./pages/seo/HalloweenColorPalette";
+import HalloweenPaletteDetail from "./pages/seo/HalloweenPaletteDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -94,6 +96,8 @@ const App = () => (
               <Route path="/palettes/frontend-developer" element={<FrontendDevColorPalettes />} />
               <Route path="/compare/hex-vs-rgb-vs-hsl" element={<HexVsRgbComparison />} />
               <Route path="/glossary/color-theory" element={<GlossaryColorTheory />} />
+              <Route path="/palettes/halloween-color-palette" element={<HalloweenColorPalette />} />
+              <Route path="/palettes/halloween/:slug" element={<HalloweenPaletteDetail />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
