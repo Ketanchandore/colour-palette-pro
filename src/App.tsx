@@ -43,6 +43,8 @@ import UIDesignerColorPalettes from "./pages/seo/UIDesignerColorPalettes";
 import FrontendDevColorPalettes from "./pages/seo/FrontendDevColorPalettes";
 import HexVsRgbComparison from "./pages/seo/HexVsRgbComparison";
 import GlossaryColorTheory from "./pages/seo/GlossaryColorTheory";
+import HalloweenColorPalette from "./pages/seo/HalloweenColorPalette";
+import HalloweenPaletteDetail from "./pages/seo/HalloweenPaletteDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
