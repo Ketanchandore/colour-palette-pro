@@ -39,6 +39,7 @@ const homepageLinks = [
   { label: "Halloween Color Palettes", path: "/palettes/halloween-color-palette", description: "Spooky and gothic Halloween color combinations" },
   { label: "Color Theory Glossary", path: "/glossary/color-theory", description: "Learn color wheel, harmony types, and theory fundamentals" },
   { label: "UI Designer Palettes", path: "/palettes/ui-designer", description: "Curated palettes for dashboards and apps" },
+  { label: "Festival Color Palettes", path: "/palettes/festival", description: "Diwali, Holi, Christmas, Eid & 18+ festival palettes" },
 ];
 
 export default function Index() {

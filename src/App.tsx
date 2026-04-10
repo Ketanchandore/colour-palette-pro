@@ -45,6 +45,8 @@ import HexVsRgbComparison from "./pages/seo/HexVsRgbComparison";
 import GlossaryColorTheory from "./pages/seo/GlossaryColorTheory";
 import HalloweenColorPalette from "./pages/seo/HalloweenColorPalette";
 import HalloweenPaletteDetail from "./pages/seo/HalloweenPaletteDetail";
+import FestivalPalettes from "./pages/FestivalPalettes";
+import FestivalPaletteDetail from "./pages/FestivalPaletteDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -98,6 +100,8 @@ const App = () => (
               <Route path="/glossary/color-theory" element={<GlossaryColorTheory />} />
               <Route path="/palettes/halloween-color-palette" element={<HalloweenColorPalette />} />
               <Route path="/palettes/halloween/:slug" element={<HalloweenPaletteDetail />} />
+              <Route path="/palettes/festival" element={<FestivalPalettes />} />
+              <Route path="/palettes/festival/:slug" element={<FestivalPaletteDetail />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
