@@ -32,6 +32,17 @@
   <url><loc>https://colourpine.com/leaderboard</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://colourpine.com/palettes/ui-designer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://colourpine.com/palettes/frontend-developer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween-color-palette</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/vampire-blood</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/witchs-brew</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/haunted-mansion</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/pumpkin-patch</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/gothic-midnight</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/candy-corn</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/skeleton-bone</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/spider-web</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/zombie-green</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://colourpine.com/palettes/halloween/phantom-purple</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://colourpine.com/compare/hex-vs-rgb-vs-hsl</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://colourpine.com/glossary/color-theory</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
