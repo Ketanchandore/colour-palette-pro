@@ -45,6 +45,8 @@ import HexVsRgbComparison from "./pages/seo/HexVsRgbComparison";
 import GlossaryColorTheory from "./pages/seo/GlossaryColorTheory";
 import HalloweenColorPalette from "./pages/seo/HalloweenColorPalette";
 import HalloweenPaletteDetail from "./pages/seo/HalloweenPaletteDetail";
+import FestivalPalettes from "./pages/FestivalPalettes";
+import FestivalPaletteDetail from "./pages/FestivalPaletteDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
