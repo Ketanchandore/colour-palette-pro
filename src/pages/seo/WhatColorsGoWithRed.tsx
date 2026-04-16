@@ -1,7 +1,7 @@
 import { SEOHead } from "@/components/seo/SEOHead";
 import { FAQSection } from "@/components/seo/FAQSection";
 import { InternalLinks } from "@/components/seo/InternalLinks";
-import MainLayout from "@/components/layout/MainLayout";
+import { MainLayout } from "@/components/layout/MainLayout";
 import { Link } from "react-router-dom";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
