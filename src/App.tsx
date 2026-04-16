@@ -47,6 +47,13 @@ import HalloweenColorPalette from "./pages/seo/HalloweenColorPalette";
 import HalloweenPaletteDetail from "./pages/seo/HalloweenPaletteDetail";
 import FestivalPalettes from "./pages/FestivalPalettes";
 import FestivalPaletteDetail from "./pages/FestivalPaletteDetail";
+import WhatColorsGoWithRed from "./pages/seo/WhatColorsGoWithRed";
+import CreativeColorWheel from "./pages/seo/CreativeColorWheel";
+import PantoneToHex from "./pages/seo/PantoneToHex";
+import PinkAndGreenPalette from "./pages/seo/PinkAndGreenPalette";
+import ColorOppositeOfPink from "./pages/seo/ColorOppositeOfPink";
+import CanvasColorCodes from "./pages/seo/CanvasColorCodes";
+import HighContrastText from "./pages/seo/HighContrastText";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -102,6 +109,14 @@ const App = () => (
               <Route path="/palettes/halloween/:slug" element={<HalloweenPaletteDetail />} />
               <Route path="/palettes/festival" element={<FestivalPalettes />} />
               <Route path="/palettes/festival/:slug" element={<FestivalPaletteDetail />} />
+              <Route path="/guides/what-colors-go-with-red" element={<WhatColorsGoWithRed />} />
+              <Route path="/guides/creative-color-wheel" element={<CreativeColorWheel />} />
+              <Route path="/guides/pantone-to-hex" element={<PantoneToHex />} />
+              <Route path="/guides/pink-and-green-palette" element={<PinkAndGreenPalette />} />
+              <Route path="/guides/color-opposite-of-pink" element={<ColorOppositeOfPink />} />
+              <Route path="/guides/canvas-color-codes" element={<CanvasColorCodes />} />
+              <Route path="/guides/high-contrast-text" element={<HighContrastText />} />
+              <Route path="/guides/black-and-white-checker" element={<HighContrastText />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
