@@ -66,12 +66,15 @@ const footerSections = [
     links: [
       { to: "/palettes/festival", label: "Festival Color Palettes" },
       { to: "/palettes/halloween-color-palette", label: "Halloween Palettes" },
+      { to: "/palettes/wedding-color-palettes", label: "Wedding Color Palettes" },
+      { to: "/palettes/pastel-color-palettes", label: "Pastel Palettes" },
+      { to: "/palettes/dark-mode-color-palettes", label: "Dark Mode Palettes" },
+      { to: "/palettes/minimalist-color-palettes", label: "Minimalist Palettes" },
       { to: "/trends", label: "2026 Color Trends" },
       { to: "/trends/cloud-dancer-2026", label: "Cloud Dancer 2026" },
       { to: "/trends/mermaidcore-2026", label: "Mermaidcore 2026" },
       { to: "/trends/thermal-glow-2026", label: "Thermal Glow 2026" },
       { to: "/leaderboard", label: "Leaderboard" },
-      { to: "/favorites", label: "My Favorites" },
     ],
   },
 ];
