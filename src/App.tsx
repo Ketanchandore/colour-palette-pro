@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import { SubscriptionProvider } from "@/hooks/useSubscription";
+import { SEOAutoBreadcrumbs } from "@/components/seo/SEOAutoBreadcrumbs";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Generator from "./pages/Generator";
@@ -70,6 +71,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <SEOAutoBreadcrumbs />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
