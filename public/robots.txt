@@ -1,7 +1,25 @@
+# Colour Pine - robots.txt
+# Allow all major crawlers full access
+
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
 Allow: /
 
 User-agent: Twitterbot
@@ -10,7 +28,41 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
 
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI crawlers - allow for visibility in AI-powered search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Default
+User-agent: *
+Allow: /
+Disallow: /auth
+Disallow: /profile
+Disallow: /favorites
+Disallow: /project-workspace
+
 Sitemap: https://colourpine.com/sitemap.xml
+Host: https://colourpine.com

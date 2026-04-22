@@ -1,0 +1,27 @@
+{
+  "name": "Colour Pine — AI Color Palette Generator",
+  "short_name": "Colour Pine",
+  "description": "AI-powered color palette generator with WCAG tools, 50,000+ colors, Pantone converter, festival palettes & 2026 trends.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#A05AFF",
+  "background_color": "#0F172A",
+  "lang": "en",
+  "categories": ["design", "productivity", "developer"],
+  "icons": [
+    {
+      "src": "/colourpine-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/colourpine-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
