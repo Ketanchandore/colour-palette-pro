@@ -54,6 +54,10 @@ import PinkAndGreenPalette from "./pages/seo/PinkAndGreenPalette";
 import ColorOppositeOfPink from "./pages/seo/ColorOppositeOfPink";
 import CanvasColorCodes from "./pages/seo/CanvasColorCodes";
 import HighContrastText from "./pages/seo/HighContrastText";
+import WeddingColorPalettes from "./pages/seo/WeddingColorPalettes";
+import PastelColorPalettes from "./pages/seo/PastelColorPalettes";
+import DarkModeColorPalettes from "./pages/seo/DarkModeColorPalettes";
+import MinimalistColorPalettes from "./pages/seo/MinimalistColorPalettes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -117,6 +121,10 @@ const App = () => (
               <Route path="/guides/canvas-color-codes" element={<CanvasColorCodes />} />
               <Route path="/guides/high-contrast-text" element={<HighContrastText />} />
               <Route path="/guides/black-and-white-checker" element={<HighContrastText />} />
+              <Route path="/palettes/wedding-color-palettes" element={<WeddingColorPalettes />} />
+              <Route path="/palettes/pastel-color-palettes" element={<PastelColorPalettes />} />
+              <Route path="/palettes/dark-mode-color-palettes" element={<DarkModeColorPalettes />} />
+              <Route path="/palettes/minimalist-color-palettes" element={<MinimalistColorPalettes />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
