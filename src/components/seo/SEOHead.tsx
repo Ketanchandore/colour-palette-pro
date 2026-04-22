@@ -21,7 +21,7 @@ interface SEOHeadProps {
 }
 
 const SITE_URL = 'https://colourpine.com';
-const DEFAULT_OG = 'https://colourpine.com/colourpine-logo.png';
+const DEFAULT_OG = 'https://colourpine.com/og-image.jpg';
 
 export const SEOHead = ({
   title = "Colour Pine — #1 AI Color Palette Generator & WCAG Tools 2026",
